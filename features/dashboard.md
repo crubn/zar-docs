@@ -30,6 +30,10 @@ The **Activity** view lists recent runs across your repos — a human-readable s
 
 ## Run view
 
+![The dashboard run view — a step-by-step timeline of one webhook delivery](/assets/dashboard.svg)
+
+*Illustrative mockup.*
+
 This is the most useful debugging tool. **One run = one webhook delivery** from GitHub, identified by its delivery ID. Open a run to see:
 
 - **Header** — repository, event type, PR number, timestamp.

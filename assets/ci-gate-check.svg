@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 286" width="720" height="286" role="img" aria-label="Illustrative ZAR CI gate check on a pull request">
+  <defs>
+    <style>.s{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;} .m{font-family:ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;}</style>
+  </defs>
+  <rect width="720" height="286" fill="#ffffff"/>
+  <rect x="12" y="12" width="696" height="262" rx="10" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+
+  <!-- status header -->
+  <circle cx="40" cy="44" r="11" fill="#cf222e"/>
+  <path d="M35 39 l10 10 M45 39 l-10 10" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+  <text x="62" y="40" class="s" font-size="15" font-weight="700" fill="#1f2328">Some checks were not successful</text>
+  <text x="62" y="58" class="s" font-size="12.5" fill="#59636e">1 failing check — merging is blocked until docs are updated</text>
+  <line x1="12" y1="78" x2="708" y2="78" stroke="#d0d7de" stroke-width="1"/>
+
+  <!-- check row: ci-gate failing -->
+  <circle cx="40" cy="104" r="9" fill="#cf222e"/>
+  <path d="M36 100 l8 8 M44 100 l-8 8" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  <text x="58" y="102" class="s" font-size="13.5" font-weight="600" fill="#1f2328">docagent/ci-gate</text>
+  <text x="58" y="119" class="s" font-size="12" fill="#59636e">ZAR CI Gate: docs needed</text>
+  <text x="690" y="108" text-anchor="end" class="s" font-size="12.5" font-weight="600" fill="#6366f1">Details</text>
+  <line x1="12" y1="138" x2="708" y2="138" stroke="#eaeef2" stroke-width="1"/>
+
+  <!-- commit status row: zar/docs pending -->
+  <circle cx="40" cy="162" r="9" fill="#bf8700"/>
+  <text x="58" y="160" class="s" font-size="13.5" font-weight="600" fill="#1f2328">zar/docs</text>
+  <text x="58" y="177" class="s" font-size="12" fill="#59636e">Docs need update — 1 change detected</text>
+  <line x1="12" y1="196" x2="708" y2="196" stroke="#d0d7de" stroke-width="1"/>
+
+  <!-- labels -->
+  <text x="28" y="226" class="s" font-size="12" fill="#59636e">Labels</text>
+  <rect x="90" y="214" width="104" height="22" rx="11" fill="#ffebe9" stroke="#cf222e" stroke-width="1"/>
+  <text x="142" y="229" text-anchor="middle" class="s" font-size="12" font-weight="600" fill="#cf222e">docs-needed</text>
+  <rect x="204" y="214" width="94" height="22" rx="11" fill="#ffebe9" stroke="#a40e26" stroke-width="1"/>
+  <text x="251" y="229" text-anchor="middle" class="s" font-size="12" font-weight="600" fill="#a40e26">ci-blocked</text>
+
+  <text x="28" y="262" class="s" font-size="11.5" fill="#8c959f">Merge ZAR's docs PR (or push a fix) and the gate turns green automatically.</text>
+</svg>

@@ -29,6 +29,10 @@ When ZAR has something to propose and comments are enabled (`comment_enabled`, o
 
 Comments are posted as the ZAR app, so they're easy to spot and filter. ZAR won't react to its own comments.
 
+![A ZAR comment proposing a documentation update on a pull request](/assets/pr-comment.svg)
+
+*Illustrative mockup.*
+
 ## 3. A documentation pull request
 
 The substantive output is a separate **docs PR**:

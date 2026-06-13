@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420" role="img" aria-label="Illustrative ZAR dashboard run view">
+  <defs>
+    <style>
+      .s { font-family: -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .m { font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; }
+    </style>
+  </defs>
+  <rect width="760" height="420" fill="#0f172a"/>
+
+  <!-- header -->
+  <text x="28" y="44" class="s" font-size="18" font-weight="700" fill="#e2e8f0">Run</text>
+  <text x="64" y="44" class="m" font-size="14" fill="#94a3b8">acme/widgets · pull_request #42</text>
+  <rect x="612" y="28" width="120" height="24" rx="12" fill="#14532d"/>
+  <text x="672" y="44" text-anchor="middle" class="s" font-size="12" font-weight="700" fill="#4ade80">PR created</text>
+  <line x1="28" y1="64" x2="732" y2="64" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- timeline -->
+  <g>
+    <!-- vertical line -->
+    <line x1="40" y1="92" x2="40" y2="300" stroke="#334155" stroke-width="2"/>
+
+    <circle cx="40" cy="92" r="6" fill="#22c55e"/>
+    <text x="60" y="89" class="m" font-size="13" font-weight="700" fill="#e2e8f0">github.received</text>
+    <text x="60" y="106" class="s" font-size="12" fill="#94a3b8">Webhook received: pull_request (synchronize)</text>
+
+    <circle cx="40" cy="142" r="6" fill="#22c55e"/>
+    <text x="60" y="139" class="m" font-size="13" font-weight="700" fill="#e2e8f0">settings.loaded</text>
+    <text x="60" y="156" class="s" font-size="12" fill="#94a3b8">CI gate: off · auto-commit: off · dry-run: off</text>
+
+    <circle cx="40" cy="192" r="6" fill="#22c55e"/>
+    <text x="60" y="189" class="m" font-size="13" font-weight="700" fill="#e2e8f0">diff.summarized</text>
+    <text x="60" y="206" class="s" font-size="12" fill="#94a3b8">3 code files · 1 doc file · 2 skipped (tests)</text>
+
+    <circle cx="40" cy="242" r="6" fill="#22c55e"/>
+    <text x="60" y="239" class="m" font-size="13" font-weight="700" fill="#e2e8f0">update.started</text>
+    <text x="60" y="256" class="s" font-size="12" fill="#94a3b8">Analyzing with Claude…</text>
+
+    <circle cx="40" cy="292" r="6" fill="#6366f1"/>
+    <text x="60" y="289" class="m" font-size="13" font-weight="700" fill="#e2e8f0">pr.created</text>
+    <text x="60" y="306" class="s" font-size="12" fill="#94a3b8">Docs PR #43 opened — 1 file updated</text>
+  </g>
+
+  <!-- stats / flags panel -->
+  <rect x="470" y="86" width="262" height="226" rx="10" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="490" y="114" class="s" font-size="12" font-weight="700" letter-spacing="1" fill="#64748b">SUMMARY</text>
+  <text x="490" y="146" class="s" font-size="13" fill="#cbd5e1">Changed files</text>
+  <text x="712" y="146" text-anchor="end" class="m" font-size="13" fill="#e2e8f0">4</text>
+  <text x="490" y="174" class="s" font-size="13" fill="#cbd5e1">Docs suggested</text>
+  <text x="712" y="174" text-anchor="end" class="m" font-size="13" fill="#e2e8f0">1</text>
+  <text x="490" y="202" class="s" font-size="13" fill="#cbd5e1">Docs updated</text>
+  <text x="712" y="202" text-anchor="end" class="m" font-size="13" fill="#e2e8f0">1</text>
+  <line x1="490" y1="220" x2="712" y2="220" stroke="#1e293b" stroke-width="1"/>
+  <rect x="490" y="236" width="92" height="22" rx="11" fill="#1e293b"/>
+  <text x="536" y="251" text-anchor="middle" class="s" font-size="11" fill="#94a3b8">dry-run: off</text>
+  <rect x="590" y="236" width="120" height="22" rx="11" fill="#1e293b"/>
+  <text x="650" y="251" text-anchor="middle" class="s" font-size="11" fill="#94a3b8">committed: no</text>
+  <text x="490" y="288" class="s" font-size="12" fill="#64748b">delivery 8f3d…a91c</text>
+
+  <line x1="28" y1="340" x2="732" y2="340" stroke="#1e293b" stroke-width="1"/>
+  <text x="28" y="368" class="s" font-size="12" fill="#475569">zar/docs ✓ · Docs update PR opened</text>
+</svg>

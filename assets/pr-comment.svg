@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" width="720" height="330" role="img" aria-label="Illustrative ZAR pull request comment">
+  <defs>
+    <style>
+      .sans { font-family: -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .mono { font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; }
+    </style>
+  </defs>
+  <rect width="720" height="330" fill="#ffffff"/>
+  <!-- comment card -->
+  <rect x="12" y="12" width="696" height="306" rx="10" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+  <!-- header -->
+  <rect x="12" y="12" width="696" height="48" rx="10" fill="#f6f8fa"/>
+  <rect x="12" y="50" width="696" height="10" fill="#f6f8fa"/>
+  <circle cx="44" cy="36" r="15" fill="#6366f1"/>
+  <text x="44" y="41" text-anchor="middle" class="sans" font-size="15" font-weight="800" fill="#fff">Z</text>
+  <text x="70" y="41" class="sans" font-size="14" fill="#1f2328"><tspan font-weight="700">zar</tspan> <tspan fill="#59636e">commented · suggested docs update on #42</tspan></text>
+  <line x1="12" y1="60" x2="708" y2="60" stroke="#d0d7de" stroke-width="1"/>
+
+  <!-- body -->
+  <rect x="34" y="80" width="14" height="14" rx="3" fill="#6366f1"/>
+  <text x="56" y="92" class="sans" font-size="16" font-weight="700" fill="#1f2328">Documentation looks out of date</text>
+  <text x="34" y="118" class="sans" font-size="13" fill="#59636e">Your change to <tspan class="mono" fill="#1f2328">config.py</tspan> sets a new default. <tspan class="mono" fill="#1f2328">README.md</tspan> still documents the old one.</text>
+
+  <!-- diff block -->
+  <rect x="34" y="134" width="652" height="120" rx="8" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+  <text x="48" y="156" class="mono" font-size="12" fill="#59636e">README.md</text>
+  <line x1="34" y1="166" x2="686" y2="166" stroke="#d0d7de" stroke-width="1"/>
+  <rect x="35" y="176" width="650" height="22" fill="#ffebe9"/>
+  <text x="48" y="191" class="mono" font-size="12.5" fill="#82071e">- Default request timeout: <tspan font-weight="700">60s</tspan></text>
+  <rect x="35" y="200" width="650" height="22" fill="#dafbe1"/>
+  <text x="48" y="215" class="mono" font-size="12.5" fill="#0a3622">+ Default request timeout: <tspan font-weight="700">300s</tspan></text>
+  <text x="48" y="240" class="mono" font-size="12" fill="#59636e">  (the rest of the section is unchanged)</text>
+
+  <!-- footer -->
+  <text x="34" y="288" class="sans" font-size="13.5" font-weight="600" fill="#6366f1">→ Review docs PR #43</text>
+  <text x="34" y="308" class="sans" font-size="11.5" fill="#8c959f">zar/docs · pending — 1 change detected</text>
+</svg>

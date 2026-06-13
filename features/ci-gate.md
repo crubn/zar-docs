@@ -35,6 +35,10 @@ When the gate is enabled and a PR is updated (`synchronize` / `ready_for_review`
 
 If the docs **are** accurate, ZAR removes those labels (if present), posts a short "gate passed" comment, and lets the merge proceed.
 
+![A blocked ZAR CI gate on a pull request, with docs-needed and ci-blocked labels](/assets/ci-gate-check.svg)
+
+*Illustrative mockup.*
+
 ## How the decision is made
 
 ZAR computes a *doc freshness* score for the PR and compares it to the `required_doc_freshness` threshold:
