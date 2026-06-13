@@ -7,13 +7,13 @@ description: Install ZAR on one repository and get your first documentation sugg
 
 This guide takes you from zero to your first ZAR documentation suggestion using the hosted app at **[app.zarlabs.tech](https://app.zarlabs.tech)**. No infrastructure required.
 
-> Running your own instance instead? Start with [Self-hosting](../self-hosting/overview.md), then come back here for the "open a real PR" steps.
+> Running your own instance instead? Start with [Self-hosting](/self-hosting/overview), then come back here for the "open a real PR" steps.
 
 ## What you'll need
 
 - A GitHub account with admin access to at least one repository.
 - A repository with some Markdown docs (`README.md` or files under `docs/`). ZAR edits docs that already exist.
-- An active ZAR plan or complimentary access. ZAR analyzes and posts commit statuses while you evaluate, but a plan is required before it opens documentation PRs. See [Plans](../plans.md).
+- An active ZAR plan or complimentary access. ZAR analyzes and posts commit statuses while you evaluate, but a plan is required before it opens documentation PRs. See [Plans](/plans).
 
 ## Step 1 — Sign in
 
@@ -29,11 +29,11 @@ Click **Connect a repo**. GitHub's app installation screen opens.
 2. Select **Only select repositories** and pick **one** repo to start.
 3. Confirm the install.
 
-GitHub will ask you to approve ZAR's [permissions](../reference/permissions-and-events.md) (read code, write PR/issue comments, write commit statuses). Approve them.
+GitHub will ask you to approve ZAR's [permissions](/reference/permissions-and-events) (read code, write PR/issue comments, write commit statuses). Approve them.
 
 Back on the dashboard, the repository now shows as **connected**.
 
-> On a fresh install, ZAR also opens a small **welcome PR** (`zar/welcome`) on your first repository that explains how it works. Merging it is optional — it's there to show you the shape of a ZAR PR. See [Onboarding](installation.md#what-happens-right-after-install).
+> On a fresh install, ZAR also opens a small **welcome PR** (`zar/welcome`) on your first repository that explains how it works. Merging it is optional — it's there to show you the shape of a ZAR PR. See [Onboarding](/getting-started/installation#what-happens-right-after-install).
 
 ## Step 3 — (Optional) Validate the connection
 
@@ -42,7 +42,7 @@ In the dashboard's **Advanced** section you can:
 - **Validate GitHub App** — confirms your App ID, private key, and webhook secret line up. Expect an `OK`.
 - **Send test webhook** — pushes a synthetic event. Expect a new entry in **Activity**, marked either `queued` (a background worker picked it up) or `local` (processed inline). Both are healthy.
 
-If either fails, jump to [Troubleshooting](../troubleshooting.md).
+If either fails, jump to [Troubleshooting](/troubleshooting).
 
 ## Step 4 — Open a pull request that changes real behavior
 
@@ -78,13 +78,13 @@ The most common causes:
 
 - The PR only touched lock files, tests, or config — ZAR skips those by design. Try a change that adds a public symbol.
 - The app is installed on the org but not on **this** repo.
-- You're on the default trigger mode (`on_significant_change`) and the change wasn't significant enough. See [Trigger modes](../configuration/trigger-modes.md).
+- You're on the default trigger mode (`on_significant_change`) and the change wasn't significant enough. See [Trigger modes](/configuration/trigger-modes).
 
-Full symptom-to-fix table: [Troubleshooting](../troubleshooting.md).
+Full symptom-to-fix table: [Troubleshooting](/troubleshooting).
 
 ## Next steps
 
-- Set a writing style so edits match your voice: **[Style guide](../configuration/style-guide.md)**.
-- Turn ZAR into a merge gate: **[CI gate](../features/ci-gate.md)**.
-- Let ZAR commit fixes for you: **[Auto-commit](../features/auto-commit.md)**.
-- Tune when ZAR speaks up: **[Trigger modes](../configuration/trigger-modes.md)**.
+- Set a writing style so edits match your voice: **[Style guide](/configuration/style-guide)**.
+- Turn ZAR into a merge gate: **[CI gate](/features/ci-gate)**.
+- Let ZAR commit fixes for you: **[Auto-commit](/features/auto-commit)**.
+- Tune when ZAR speaks up: **[Trigger modes](/configuration/trigger-modes)**.

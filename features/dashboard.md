@@ -9,20 +9,20 @@ The dashboard at **[app.zarlabs.tech](https://app.zarlabs.tech)** is where you m
 
 ## Repositories
 
-After you [connect a repo](../getting-started/installation.md), it appears in your repository list. From there you can open its settings and activity.
+After you [connect a repo](/getting-started/installation), it appears in your repository list. From there you can open its settings and activity.
 
 ## Per-repo settings
 
 The dashboard exposes the operational toggles that are intentionally **not** in `.zar.yml`:
 
-- [Auto-commit](auto-commit.md) (`auto_commit_enabled`)
-- [CI gate](ci-gate.md) (`ci_gate_enabled`) and its `required_doc_freshness` threshold
-- [Dry-run](../configuration/trigger-modes.md#dry-run) and debug mode
+- [Auto-commit](/features/auto-commit) (`auto_commit_enabled`)
+- [CI gate](/features/ci-gate) (`ci_gate_enabled`) and its `required_doc_freshness` threshold
+- [Dry-run](/configuration/trigger-modes#dry-run) and debug mode
 - `use_updates_branch`, `disable_pr`, comment toggle
-- [Cross-repo docs](cross-repo-docs.md) settings
-- Trigger mode, target branch, PR size, and style guide (also settable in [`.zar.yml`](../configuration/zar-yml.md))
+- [Cross-repo docs](/features/cross-repo-docs) settings
+- Trigger mode, target branch, PR size, and style guide (also settable in [`.zar.yml`](/configuration/zar-yml))
 
-See the [Settings reference](../reference/settings.md) for every field.
+See the [Settings reference](/reference/settings) for every field.
 
 ## Activity feed
 
@@ -54,10 +54,10 @@ Under **Advanced**, the dashboard offers:
 - **Validate GitHub App** — checks that the App ID, private key, and webhook secret are consistent.
 - **Send test webhook** — emits a synthetic event so you can confirm the pipeline end-to-end without making a real commit.
 
-Both are described in the [Quickstart](../getting-started/quickstart.md#step-3--optional-validate-the-connection).
+Both are described in the [Quickstart](/getting-started/quickstart#step-3--optional-validate-the-connection).
 
 ## Next steps
 
-- **[Settings reference](../reference/settings.md)** — every dashboard field.
-- **[How ZAR works](../concepts/how-it-works.md)** — what the timeline steps correspond to.
-- **[Troubleshooting](../troubleshooting.md)** — using runs to diagnose problems.
+- **[Settings reference](/reference/settings)** — every dashboard field.
+- **[How ZAR works](/concepts/how-it-works)** — what the timeline steps correspond to.
+- **[Troubleshooting](/troubleshooting)** — using runs to diagnose problems.

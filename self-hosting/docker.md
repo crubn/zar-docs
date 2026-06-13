@@ -80,7 +80,7 @@ Keep secrets in `.env` (referenced via `env_file`) and **never commit it**.
 ## Persistence & scaling
 
 - Use **Postgres** for production; SQLite in a container is lost on redeploy unless you mount a volume.
-- If you run more than one ZAR replica, add a shared lock so replicas don't double-process a repo's events. See the [scaling note](overview.md#scaling-note).
+- If you run more than one ZAR replica, add a shared lock so replicas don't double-process a repo's events. See the [scaling note](/self-hosting/overview#scaling-note).
 
 ## Verify
 
@@ -91,6 +91,6 @@ curl -s http://localhost:8000/healthz
 
 ## Next steps
 
-- **[Self-hosting overview](overview.md)** — registering the GitHub App.
-- **[Environment variables](../reference/environment-variables.md)** — full configuration.
-- **[Railway](railway.md)** — a managed alternative.
+- **[Self-hosting overview](/self-hosting/overview)** — registering the GitHub App.
+- **[Environment variables](/reference/environment-variables)** — full configuration.
+- **[Railway](/self-hosting/railway)** — a managed alternative.

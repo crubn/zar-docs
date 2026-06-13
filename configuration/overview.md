@@ -38,7 +38,7 @@ These describe *how docs should be produced* and are natural to version with the
 | `style_guide` | Yes |
 | `notify_slack` | No (`.zar.yml` only) |
 
-Full schema and an example: **[`.zar.yml` reference](zar-yml.md)**.
+Full schema and an example: **[`.zar.yml` reference](/configuration/zar-yml)**.
 
 ### Dashboard / database only
 
@@ -54,9 +54,9 @@ These are operational toggles and safety switches, kept out of the repo so a PR 
 | `use_updates_branch` | Commit to a dedicated `zar-updates/…` branch vs. the PR head. |
 | `disable_pr` | Stop ZAR from opening docs PRs or committing. |
 | `comment_enabled` | Post the status comment on PRs. |
-| `cross_repo_enabled`, `docs_repo`, `docs_repo_path`, `docs_repo_branch` | [Cross-repo docs](../features/cross-repo-docs.md). |
+| `cross_repo_enabled`, `docs_repo`, `docs_repo_path`, `docs_repo_branch` | [Cross-repo docs](/features/cross-repo-docs). |
 
-The complete table of every setting, with types, defaults, and ranges, is in the **[Settings reference](../reference/settings.md)**.
+The complete table of every setting, with types, defaults, and ranges, is in the **[Settings reference](/reference/settings)**.
 
 ## New-repository defaults
 
@@ -80,11 +80,11 @@ So out of the box: ZAR watches `main`, acts only on significant changes, opens s
 
 1. Leave everything at defaults and open a few PRs to see ZAR's suggestions.
 2. Add a `.zar.yml` with a `style_guide` so edits match your voice.
-3. When you trust the output, enable the [CI gate](../features/ci-gate.md) — start in [dry-run](trigger-modes.md#dry-run) to preview.
-4. Only after that, consider [auto-commit](../features/auto-commit.md).
+3. When you trust the output, enable the [CI gate](/features/ci-gate) — start in [dry-run](/configuration/trigger-modes#dry-run) to preview.
+4. Only after that, consider [auto-commit](/features/auto-commit).
 
 ## Next steps
 
-- **[`.zar.yml` reference](zar-yml.md)** — the file you commit to your repo.
-- **[Trigger modes](trigger-modes.md)** — when ZAR speaks up.
-- **[Settings reference](../reference/settings.md)** — every setting, every default.
+- **[`.zar.yml` reference](/configuration/zar-yml)** — the file you commit to your repo.
+- **[Trigger modes](/configuration/trigger-modes)** — when ZAR speaks up.
+- **[Settings reference](/reference/settings)** — every setting, every default.

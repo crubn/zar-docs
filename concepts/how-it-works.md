@@ -48,7 +48,7 @@ GitHub webhook (push / pull_request / issue_comment)
 
 ### 1. Webhook arrives and is verified
 
-GitHub sends a signed `POST` to `/github/webhook`. ZAR verifies the `X-Hub-Signature-256` HMAC against the configured webhook secret. Anything that fails verification is rejected with `401` and never processed. See [Safety & guarantees](safety-and-guarantees.md#1-every-webhook-is-verified).
+GitHub sends a signed `POST` to `/github/webhook`. ZAR verifies the `X-Hub-Signature-256` HMAC against the configured webhook secret. Anything that fails verification is rejected with `401` and never processed. See [Safety & guarantees](/concepts/safety-and-guarantees#1-every-webhook-is-verified).
 
 ### 2. Fast acknowledgement, background work
 
@@ -58,7 +58,7 @@ ZAR returns `202 Accepted` right away and does the real work in a background tas
 
 Only three event types do work:
 
-- **`issue_comment`** (action `created`) → routed to the [command handler](../features/commands.md). Code analysis does not run here.
+- **`issue_comment`** (action `created`) → routed to the [command handler](/features/commands). Code analysis does not run here.
 - **`push`** → analyze the commits between the `before` and `after` SHAs.
 - **`pull_request`** (`opened`, `synchronize`, `ready_for_review`, and merges) → analyze the PR's changed files.
 
@@ -66,7 +66,7 @@ Other events are acknowledged and ignored. Pushes authored by bots (including ZA
 
 ### 4. Effective configuration
 
-ZAR loads the repository's settings from its database and merges them with a [`.zar.yml`](../configuration/zar-yml.md) file from the repo root, if present. Dashboard/database values take precedence over `.zar.yml` where both are set. The result is the *effective config* — trigger mode, watched branch, confidence threshold, style guide, and feature flags — used for the rest of the run. See [Configuration overview](../configuration/overview.md).
+ZAR loads the repository's settings from its database and merges them with a [`.zar.yml`](/configuration/zar-yml) file from the repo root, if present. Dashboard/database values take precedence over `.zar.yml` where both are set. The result is the *effective config* — trigger mode, watched branch, confidence threshold, style guide, and feature flags — used for the rest of the run. See [Configuration overview](/configuration/overview).
 
 ### 5. Fetch and summarize the diff
 
@@ -83,11 +83,11 @@ ZAR applies a **significance check** so it doesn't nag on noise. A change is tre
 - A signature change (symbols both removed and added in the same file).
 - A "meaningful" diff of at least ~10 lines (whitespace-only changes don't count).
 
-A change is **skipped** when it's test-only, config-only, or a trivial diff. When skipped, ZAR simply posts a green `zar/docs` status and stops. Details and tuning: [Trigger modes](../configuration/trigger-modes.md).
+A change is **skipped** when it's test-only, config-only, or a trivial diff. When skipped, ZAR simply posts a green `zar/docs` status and stops. Details and tuning: [Trigger modes](/configuration/trigger-modes).
 
 ### 7. Trigger policy
 
-Even a significant change might not open a PR *right now*. The [trigger mode](../configuration/trigger-modes.md) decides:
+Even a significant change might not open a PR *right now*. The [trigger mode](/configuration/trigger-modes) decides:
 
 - `every_commit` — act on every analyzed commit.
 - `on_significant_change` *(default)* — act when the change is significant and confident.
@@ -98,13 +98,13 @@ Batching uses a *pending state* so deferred changes accumulate and surface toget
 
 ### 8. CI gate (pull requests only, optional)
 
-If you've enabled the [CI gate](../features/ci-gate.md), ZAR asks Claude whether the docs are still accurate for this PR. If they're not, ZAR:
+If you've enabled the [CI gate](/features/ci-gate), ZAR asks Claude whether the docs are still accurate for this PR. If they're not, ZAR:
 
 - comments on the PR with the proposed edits,
 - adds the `docs-needed` and `ci-blocked` labels,
 - creates a failing `docagent/ci-gate` check run,
 
-and stops there. In [dry-run](safety-and-guarantees.md#4-dry-run-is-a-hard-guarantee) mode the gate reports but never blocks.
+and stops there. In [dry-run](/concepts/safety-and-guarantees#4-dry-run-is-a-hard-guarantee) mode the gate reports but never blocks.
 
 ### 9. Claude proposes minimal patches
 
@@ -124,16 +124,16 @@ ZAR applies the patches to a working copy and then:
 - **Opens or updates a single docs PR** on a `zar-updates/…` branch targeting your base branch. ZAR keeps at most one open docs PR per base, superseding older ones.
 - **Comments on the source PR** (when enabled) showing what changed and why.
 - **Sets the `zar/docs` commit status** to reflect the outcome.
-- **Commits directly only** when you've enabled auto-commit *and* the operator allows writes. See [Auto-commit](../features/auto-commit.md).
+- **Commits directly only** when you've enabled auto-commit *and* the operator allows writes. See [Auto-commit](/features/auto-commit).
 
-For `.mdx` files, ZAR runs an integrity check and rejects any edit that would strip frontmatter keys or imports — a broken Nextra build is worse than a stale doc. For multilingual sites, it mirrors an edit across sibling language variants. See [MDX & multilingual](../features/mdx-and-multilingual.md).
+For `.mdx` files, ZAR runs an integrity check and rejects any edit that would strip frontmatter keys or imports — a broken Nextra build is worse than a stale doc. For multilingual sites, it mirrors an edit across sibling language variants. See [MDX & multilingual](/features/mdx-and-multilingual).
 
 ## Every run is recorded
 
-Each webhook delivery becomes one **run** in the dashboard, identified by GitHub's delivery ID. A run stores the event, the changed/code/doc files, how many doc changes were suggested versus applied, the feature flags in effect, and a step-by-step timeline. See [Dashboard](../features/dashboard.md).
+Each webhook delivery becomes one **run** in the dashboard, identified by GitHub's delivery ID. A run stores the event, the changed/code/doc files, how many doc changes were suggested versus applied, the feature flags in effect, and a step-by-step timeline. See [Dashboard](/features/dashboard).
 
 ## Where to go next
 
-- **[Safety & guarantees](safety-and-guarantees.md)** — the promises this pipeline keeps.
-- **[Trigger modes](../configuration/trigger-modes.md)** — control steps 6 and 7.
-- **[CI gate](../features/ci-gate.md)** — turn step 8 into a merge gate.
+- **[Safety & guarantees](/concepts/safety-and-guarantees)** — the promises this pipeline keeps.
+- **[Trigger modes](/configuration/trigger-modes)** — control steps 6 and 7.
+- **[CI gate](/features/ci-gate)** — turn step 8 into a merge gate.

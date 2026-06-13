@@ -17,8 +17,8 @@ There is no perpetual free tier in the product today; pricing and any trial are 
 | Doc commits / month | 500 | Unlimited | Unlimited |
 | Private repositories | ✓ | ✓ | ✓ |
 | Style guide | ✓ | ✓ | ✓ |
-| [CI gate](features/ci-gate.md) | — | ✓ | ✓ |
-| [Cross-repo docs](features/cross-repo-docs.md) | — | ✓ | ✓ |
+| [CI gate](/features/ci-gate) | — | ✓ | ✓ |
+| [Cross-repo docs](/features/cross-repo-docs) | — | ✓ | ✓ |
 | MCP server | — | ✓ | ✓ |
 
 Pro is the entry tier for individuals and small teams. Team unlocks the org-wide controls — the merge gate, cross-repo docs, and the MCP server. Enterprise carries the same capabilities as Team with arrangements suited to larger organizations.
@@ -31,7 +31,7 @@ ZAR resolves access per team at PR-creation time:
 - **Complimentary ("comped") access** — granted manually by the ZAR team; behaves like Team and doesn't expire.
 - **No access** — analysis and statuses may run, but ZAR won't open documentation PRs until a plan is active.
 
-When access is missing, ZAR records "Subscription required" on the run and posts a `failure` commit status rather than silently doing nothing — so it's clear *why* no PR appeared. Check the [run view](features/dashboard.md#run-view) if you're unsure.
+When access is missing, ZAR records "Subscription required" on the run and posts a `failure` commit status rather than silently doing nothing — so it's clear *why* no PR appeared. Check the [run view](/features/dashboard#run-view) if you're unsure.
 
 ## Pricing
 
@@ -39,6 +39,6 @@ Current prices live on the [dashboard](https://app.zarlabs.tech) and the GitHub 
 
 ## Next steps
 
-- **[CI gate](features/ci-gate.md)** and **[Cross-repo docs](features/cross-repo-docs.md)** — the Team-tier features.
-- **[Dashboard](features/dashboard.md)** — manage your plan and see access state.
-- **[FAQ](faq.md)** — common questions about access and limits.
+- **[CI gate](/features/ci-gate)** and **[Cross-repo docs](/features/cross-repo-docs)** — the Team-tier features.
+- **[Dashboard](/features/dashboard)** — manage your plan and see access state.
+- **[FAQ](/faq)** — common questions about access and limits.

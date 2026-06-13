@@ -19,7 +19,7 @@ ZAR is a FastAPI application you can run anywhere that gives you a public HTTPS 
 You register your own GitHub App (the hosted ZAR App is separate). The repo ships a manifest to make this one click:
 
 1. Use `github-app-manifest.yml` from the [product repo](https://github.com/crubn/docagent).
-2. In GitHub: **Settings → Developer settings → GitHub Apps → New GitHub App → Register from manifest** (or create manually with the same [permissions and events](../reference/permissions-and-events.md)).
+2. In GitHub: **Settings → Developer settings → GitHub Apps → New GitHub App → Register from manifest** (or create manually with the same [permissions and events](/reference/permissions-and-events)).
 3. Set the **Webhook URL** to `https://YOUR_DOMAIN/github/webhook`.
 4. Generate and download a **private key** (`.pem`).
 5. Note the **App ID** and set a strong **webhook secret**.
@@ -36,7 +36,7 @@ ANTHROPIC_API_KEY=sk-ant-...
 APP_ENV=production
 ```
 
-The full list — limits, OAuth, billing, SMTP — is in [Environment variables](../reference/environment-variables.md).
+The full list — limits, OAuth, billing, SMTP — is in [Environment variables](/reference/environment-variables).
 
 ## Step 3 — Run it
 
@@ -53,7 +53,7 @@ For production, run under a process manager with multiple workers behind a TLS-t
 gunicorn app.main:app -k uvicorn.workers.UvicornWorker -w 2 -b 0.0.0.0:8000
 ```
 
-Or use a platform guide: **[Railway](railway.md)** · **[Docker](docker.md)**.
+Or use a platform guide: **[Railway](/self-hosting/railway)** · **[Docker](/self-hosting/docker)**.
 
 ## Step 4 — Point GitHub at it and verify
 
@@ -72,10 +72,10 @@ ZAR serializes writes per repository with an in-process lock, which prevents dup
 
 ## Keeping secrets safe
 
-Never commit `.env`, the `.pem` private key, or the SQLite database. See [Security](../security.md).
+Never commit `.env`, the `.pem` private key, or the SQLite database. See [Security](/security).
 
 ## Next steps
 
-- **[Railway](railway.md)** — managed deploy with Postgres + Redis.
-- **[Docker](docker.md)** — container and compose.
-- **[Environment variables](../reference/environment-variables.md)** — complete configuration.
+- **[Railway](/self-hosting/railway)** — managed deploy with Postgres + Redis.
+- **[Docker](/self-hosting/docker)** — container and compose.
+- **[Environment variables](/reference/environment-variables)** — complete configuration.

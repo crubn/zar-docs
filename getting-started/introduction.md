@@ -28,7 +28,7 @@ A PR changes  ──▶  ZAR reads the diff  ──▶  proposes a minimal doc p
 ## What ZAR is not
 
 - **It is not a hosted docs website.** ZAR edits the Markdown in your repo; it does not host or render a site. A publishing platform like [Mintlify](https://mintlify.com) is complementary — ZAR keeps the source correct, the platform publishes it.
-- **It is not an autonomous committer.** By default ZAR only comments and opens PRs. Writing directly to your branches requires two explicit opt-ins (see [Auto-commit](../features/auto-commit.md)).
+- **It is not an autonomous committer.** By default ZAR only comments and opens PRs. Writing directly to your branches requires two explicit opt-ins (see [Auto-commit](/features/auto-commit)).
 - **It does not invent documentation.** ZAR edits docs you already have to match code that already exists. It won't fabricate APIs, and it won't write a whole docs site from scratch.
 
 ## Why PR-native matters
@@ -36,8 +36,8 @@ A PR changes  ──▶  ZAR reads the diff  ──▶  proposes a minimal doc p
 Most docs tooling lives in a separate place you have to remember to visit. ZAR lives inside the review you're already doing:
 
 - Suggestions appear as **PR comments and a docs PR**, so they're reviewed with the code that caused them.
-- An optional **[CI gate](../features/ci-gate.md)** can block a merge when docs look stale, exactly like a failing test.
-- You drive it with **[plain-English commands](../features/commands.md)** in a comment — no separate dashboard trip required for everyday actions.
+- An optional **[CI gate](/features/ci-gate)** can block a merge when docs look stale, exactly like a failing test.
+- You drive it with **[plain-English commands](/features/commands)** in a comment — no separate dashboard trip required for everyday actions.
 
 ## Who ZAR is for
 
@@ -47,6 +47,6 @@ Most docs tooling lives in a separate place you have to remember to visit. ZAR l
 
 ## Next steps
 
-- **[Quickstart](quickstart.md)** — install ZAR and see your first suggestion in a few minutes.
-- **[How ZAR works](../concepts/how-it-works.md)** — the full pipeline, end to end.
-- **[Safety & guarantees](../concepts/safety-and-guarantees.md)** — exactly what ZAR will and won't do to your repo.
+- **[Quickstart](/getting-started/quickstart)** — install ZAR and see your first suggestion in a few minutes.
+- **[How ZAR works](/concepts/how-it-works)** — the full pipeline, end to end.
+- **[Safety & guarantees](/concepts/safety-and-guarantees)** — exactly what ZAR will and won't do to your repo.

@@ -7,7 +7,7 @@ description: The version-controlled ZAR configuration file — every supported k
 
 Place a `.zar.yml` file in your repository root to version your ZAR settings alongside your code. It's optional — ZAR works with sensible defaults — but it's the cleanest way to keep configuration reviewable.
 
-Remember the [precedence rule](overview.md#precedence-dashboard-wins): an explicit dashboard setting overrides the same key in `.zar.yml`.
+Remember the [precedence rule](/configuration/overview#precedence-dashboard-wins): an explicit dashboard setting overrides the same key in `.zar.yml`.
 
 ## Complete example
 
@@ -37,7 +37,7 @@ When ZAR opens a documentation PR. Hyphens and underscores are both accepted (`o
 
 - **Type:** string · **Default:** `on_significant_change`
 - **Values:** `every_commit`, `on_significant_change`, `daily`, `on_merge`
-- An unrecognized value falls back to the default. Full behavior: [Trigger modes](trigger-modes.md).
+- An unrecognized value falls back to the default. Full behavior: [Trigger modes](/configuration/trigger-modes).
 
 ### `batch_hours`
 
@@ -52,7 +52,7 @@ The confidence ZAR requires before it acts on a change. Lower = more eager, high
 
 - **Type:** float · **Default:** `0.6`
 - **Range:** clamped to `0.0`–`1.0`
-- Maps to the dashboard's `min_confidence`. (The CI gate uses a separate `required_doc_freshness` threshold — see [CI gate](../features/ci-gate.md).)
+- Maps to the dashboard's `min_confidence`. (The CI gate uses a separate `required_doc_freshness` threshold — see [CI gate](/features/ci-gate).)
 
 ### `target_branch`
 
@@ -74,7 +74,7 @@ How much one docs PR is allowed to contain.
 Natural-language instructions that shape ZAR's writing — tone, structure, examples, terminology. Free text; a YAML block scalar (`|`) is handy for multiple lines.
 
 - **Type:** string · **Default:** empty
-- See [Style guide](style-guide.md) for what works well.
+- See [Style guide](/configuration/style-guide) for what works well.
 
 ### `notify_slack`
 
@@ -93,10 +93,10 @@ A Slack incoming-webhook URL to notify on doc updates. Set to `false` (or omit) 
 
 Safety and operational switches are intentionally **dashboard-only** and cannot be set from `.zar.yml`: `auto_commit_enabled`, `ci_gate_enabled`, `required_doc_freshness`, `dry_run`, `debug_mode`, `use_updates_branch`, `disable_pr`, `comment_enabled`, and the cross-repo settings. This keeps a pull request from silently turning on commits or flipping the merge gate.
 
-See the [Settings reference](../reference/settings.md) for those.
+See the [Settings reference](/reference/settings) for those.
 
 ## Next steps
 
-- **[Trigger modes](trigger-modes.md)** — what each `trigger` value does.
-- **[Style guide](style-guide.md)** — write a `style_guide` that works.
-- **[Configuration overview](overview.md)** — how `.zar.yml` and the dashboard combine.
+- **[Trigger modes](/configuration/trigger-modes)** — what each `trigger` value does.
+- **[Style guide](/configuration/style-guide)** — write a `style_guide` that works.
+- **[Configuration overview](/configuration/overview)** — how `.zar.yml` and the dashboard combine.

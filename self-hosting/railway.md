@@ -34,7 +34,7 @@ APP_ENV=production
 SESSION_SECRET=...        # python -c "import secrets; print(secrets.token_hex(32))"
 ```
 
-On Railway, prefer `GITHUB_PRIVATE_KEY` (the inline PEM) over `GITHUB_PRIVATE_KEY_PATH` — there's no `.pem` file to mount. See [Environment variables](../reference/environment-variables.md) for the rest (limits, OAuth, SMTP, billing).
+On Railway, prefer `GITHUB_PRIVATE_KEY` (the inline PEM) over `GITHUB_PRIVATE_KEY_PATH` — there's no `.pem` file to mount. See [Environment variables](/reference/environment-variables) for the rest (limits, OAuth, SMTP, billing).
 
 ## 4. Deploy and get the domain
 
@@ -64,6 +64,6 @@ https://your-app.up.railway.app/github/webhook
 
 ## Next steps
 
-- **[Environment variables](../reference/environment-variables.md)** — full configuration.
-- **[Docker](docker.md)** — if you'd rather run containers elsewhere.
-- **[Troubleshooting](../troubleshooting.md)** — webhook delivery problems.
+- **[Environment variables](/reference/environment-variables)** — full configuration.
+- **[Docker](/self-hosting/docker)** — if you'd rather run containers elsewhere.
+- **[Troubleshooting](/troubleshooting)** — webhook delivery problems.

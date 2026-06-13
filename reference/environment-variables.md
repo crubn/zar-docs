@@ -28,7 +28,7 @@ A minimal instance needs four things: a GitHub App identity, a webhook secret, a
 
 | Variable | Default | What it does |
 |--|--|--|
-| `DOCAGENT_WRITE_COMMITS` | `true` | Master switch for committing doc updates to GitHub. Auto-commit also requires the per-repo `auto_commit_enabled` setting. Accepts `1/true/yes/on/y` and `0/false/no/off/n`. Set to `false` to globally forbid all writes. See [Auto-commit](../features/auto-commit.md). |
+| `DOCAGENT_WRITE_COMMITS` | `true` | Master switch for committing doc updates to GitHub. Auto-commit also requires the per-repo `auto_commit_enabled` setting. Accepts `1/true/yes/on/y` and `0/false/no/off/n`. Set to `false` to globally forbid all writes. See [Auto-commit](/features/auto-commit). |
 
 ## Analysis limits & cost control
 
@@ -80,7 +80,7 @@ Only needed if you run paid plans through [Polar](https://polar.sh).
 
 ## Email (SMTP)
 
-Optional. If unset, ZAR skips sending email rather than erroring. See [Notifications](../features/notifications.md).
+Optional. If unset, ZAR skips sending email rather than erroring. See [Notifications](/features/notifications).
 
 | Variable | Default | What it does |
 |--|--|--|
@@ -91,6 +91,6 @@ Optional. If unset, ZAR skips sending email rather than erroring. See [Notificat
 
 ## Related
 
-- [Self-hosting overview](../self-hosting/overview.md) — putting these together.
-- [Railway](../self-hosting/railway.md) · [Docker](../self-hosting/docker.md) — deploy guides.
-- [Settings reference](settings.md) — per-repo settings (vs. these operator-level vars).
+- [Self-hosting overview](/self-hosting/overview) — putting these together.
+- [Railway](/self-hosting/railway) · [Docker](/self-hosting/docker) — deploy guides.
+- [Settings reference](/reference/settings) — per-repo settings (vs. these operator-level vars).

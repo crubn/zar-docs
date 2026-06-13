@@ -12,13 +12,13 @@ ZAR requests the least privilege it needs to read diffs and post reviewable feed
 | Permission | Level | Why |
 |--|--|--|
 | Metadata | Read | Required for every GitHub App. |
-| Contents | Read & write | Read code diffs and doc files; **write** is used only when [auto-commit](../features/auto-commit.md) is enabled. |
+| Contents | Read & write | Read code diffs and doc files; **write** is used only when [auto-commit](/features/auto-commit) is enabled. |
 | Pull requests | Read & write | List changed files; post review comments and docs PRs. |
-| Issues | Read & write | Reply to `@docagent` [commands](../features/commands.md); post the welcome issue. |
-| Checks | Read & write | Create the `docagent/ci-gate` check run for the [CI gate](../features/ci-gate.md). |
+| Issues | Read & write | Reply to `@docagent` [commands](/features/commands); post the welcome issue. |
+| Checks | Read & write | Create the `docagent/ci-gate` check run for the [CI gate](/features/ci-gate). |
 | Commit statuses | Read & write | Post the `zar/docs` status on analyzed commits. |
 
-> `Contents: write` is requested so that auto-commit can work when you turn it on. With auto-commit off (the default), ZAR reads contents but only ever *writes* via pull requests. See [Safety & guarantees](../concepts/safety-and-guarantees.md#2-zar-never-writes-by-default).
+> `Contents: write` is requested so that auto-commit can work when you turn it on. With auto-commit off (the default), ZAR reads contents but only ever *writes* via pull requests. See [Safety & guarantees](/concepts/safety-and-guarantees#2-zar-never-writes-by-default).
 
 ## Webhook events
 
@@ -48,10 +48,10 @@ ZAR is a FastAPI app. The endpoints you'll care about:
 
 > The webhook router is mounted under `/github`, so the full public path is `/github/webhook` — a common mistake is to configure just `/webhook`.
 
-Admin and MCP routes exist behind their own secrets (`DOCAGENT_ADMIN_TOKEN`, `ADMIN_SECRET`, `DOCAGENT_MCP_SECRET`); see [Environment variables](environment-variables.md).
+Admin and MCP routes exist behind their own secrets (`DOCAGENT_ADMIN_TOKEN`, `ADMIN_SECRET`, `DOCAGENT_MCP_SECRET`); see [Environment variables](/reference/environment-variables).
 
 ## Related
 
-- [Installation](../getting-started/installation.md) — installing with these permissions.
-- [Self-hosting overview](../self-hosting/overview.md) — registering your own App.
-- [Security](../security.md) — webhook verification and hardening.
+- [Installation](/getting-started/installation) — installing with these permissions.
+- [Self-hosting overview](/self-hosting/overview) — registering your own App.
+- [Security](/security) — webhook verification and hardening.

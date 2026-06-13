@@ -50,10 +50,10 @@ MDX and multilingual support is production-ready for Nextra-style projects, with
 
 - Keep frontmatter keys you care about (like `title`) in the source; ZAR will preserve them, and that's also what drives your nav.
 - If you keep navigation in `meta.json`, manage it yourself — ZAR intentionally leaves it alone.
-- Pair this with [cross-repo docs](cross-repo-docs.md) if your MDX site lives in its own repository.
+- Pair this with [cross-repo docs](/features/cross-repo-docs) if your MDX site lives in its own repository.
 
 ## Next steps
 
-- **[Cross-repo docs](cross-repo-docs.md)** — for docs-site-in-its-own-repo setups.
-- **[How ZAR works](../concepts/how-it-works.md)** — where the integrity check sits in the pipeline.
-- **[Safety & guarantees](../concepts/safety-and-guarantees.md#7-bad-edits-are-rejected-not-shipped)** — the rejection guarantees.
+- **[Cross-repo docs](/features/cross-repo-docs)** — for docs-site-in-its-own-repo setups.
+- **[How ZAR works](/concepts/how-it-works)** — where the integrity check sits in the pipeline.
+- **[Safety & guarantees](/concepts/safety-and-guarantees#7-bad-edits-are-rejected-not-shipped)** — the rejection guarantees.

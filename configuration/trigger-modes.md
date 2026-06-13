@@ -7,7 +7,7 @@ description: Control when ZAR opens a documentation PR — the four trigger mode
 
 The trigger mode decides *when* ZAR opens a documentation PR. Combined with the significance filter, it's the main control over how chatty ZAR is.
 
-Set it in [`.zar.yml`](zar-yml.md) (`trigger:`) or the dashboard. Default: `on_significant_change`.
+Set it in [`.zar.yml`](/configuration/zar-yml) (`trigger:`) or the dashboard. Default: `on_significant_change`.
 
 > A commit status (`zar/docs`) is posted on **every** analyzed commit regardless of trigger mode. The trigger mode only governs whether a *PR* is opened.
 
@@ -50,7 +50,7 @@ When a change is skipped, ZAR posts a green `zar/docs` status and does nothing e
 
 Significance answers *"did something doc-worthy change?"*; confidence answers *"how sure is ZAR?"*. The `threshold` (`.zar.yml`) / `min_confidence` (dashboard) value, default `0.6`, gates borderline changes. Raise it to suppress marginal suggestions; lower it to catch more.
 
-This is distinct from the CI gate's `required_doc_freshness` threshold, which governs *blocking* — see [CI gate](../features/ci-gate.md).
+This is distinct from the CI gate's `required_doc_freshness` threshold, which governs *blocking* — see [CI gate](/features/ci-gate).
 
 ## Batching
 
@@ -69,7 +69,7 @@ To bypass trigger mode and significance entirely, comment on a PR:
 @docagent update docs now
 ```
 
-This forces ZAR to analyze and propose changes immediately, regardless of mode. See [Commands](../features/commands.md).
+This forces ZAR to analyze and propose changes immediately, regardless of mode. See [Commands](/features/commands).
 
 ## Dry-run
 
@@ -78,7 +78,7 @@ This forces ZAR to analyze and propose changes immediately, regardless of mode. 
 - it never commits, and
 - it never blocks a merge (the CI gate evaluates and comments but doesn't fail).
 
-It's the safest way to preview behavior on a real repo before enabling the CI gate or auto-commit. See [Safety & guarantees](../concepts/safety-and-guarantees.md#4-dry-run-is-a-hard-guarantee).
+It's the safest way to preview behavior on a real repo before enabling the CI gate or auto-commit. See [Safety & guarantees](/concepts/safety-and-guarantees#4-dry-run-is-a-hard-guarantee).
 
 ## Choosing a mode
 
@@ -92,6 +92,6 @@ It's the safest way to preview behavior on a real repo before enabling the CI ga
 
 ## Next steps
 
-- **[`.zar.yml` reference](zar-yml.md)** — set `trigger`, `batch_hours`, `threshold`.
-- **[CI gate](../features/ci-gate.md)** — turn stale docs into a failing check.
-- **[How ZAR works](../concepts/how-it-works.md)** — where significance and trigger policy sit in the pipeline.
+- **[`.zar.yml` reference](/configuration/zar-yml)** — set `trigger`, `batch_hours`, `threshold`.
+- **[CI gate](/features/ci-gate)** — turn stale docs into a failing check.
+- **[How ZAR works](/concepts/how-it-works)** — where significance and trigger policy sit in the pipeline.

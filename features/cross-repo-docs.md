@@ -7,7 +7,7 @@ description: Keep documentation in a separate repository in sync with code chang
 
 Some teams keep documentation in a **separate repository** from the code — a dedicated `docs` repo, a handbook, or a Mintlify/Nextra site. Cross-repo docs lets ZAR analyze code changes in one repository and open documentation PRs against a **different** one.
 
-This is a **Team / Enterprise** feature. See [Plans](../plans.md).
+This is a **Team / Enterprise** feature. See [Plans](/plans).
 
 ## How it works
 
@@ -44,6 +44,6 @@ Cross-repo settings are **dashboard-only** (not in `.zar.yml`):
 
 ## Next steps
 
-- **[Settings reference](../reference/settings.md)** — the cross-repo fields.
-- **[MDX & multilingual](mdx-and-multilingual.md)** — if your docs repo is a Nextra/MDX site.
-- **[Plans](../plans.md)** — availability.
+- **[Settings reference](/reference/settings)** — the cross-repo fields.
+- **[MDX & multilingual](/features/mdx-and-multilingual)** — if your docs repo is a Nextra/MDX site.
+- **[Plans](/plans)** — availability.

@@ -31,14 +31,14 @@ When ZAR analyzes a commit but decides no doc update is warranted (the change wa
 
 ## Slack
 
-A `notify_slack` key exists in [`.zar.yml`](../configuration/zar-yml.md) for a Slack incoming-webhook URL. Outbound Slack delivery depends on your instance's operator configuration; on a self-hosted instance, treat it as best-effort and verify it end-to-end before relying on it. Email is the channel ZAR implements directly.
+A `notify_slack` key exists in [`.zar.yml`](/configuration/zar-yml) for a Slack incoming-webhook URL. Outbound Slack delivery depends on your instance's operator configuration; on a self-hosted instance, treat it as best-effort and verify it end-to-end before relying on it. Email is the channel ZAR implements directly.
 
 ## Self-hosting note
 
-Email requires SMTP environment variables (`SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASSWORD`, `SMTP_FROM`). If they're unset, ZAR simply skips sending — it won't error. See [Environment variables](../reference/environment-variables.md).
+Email requires SMTP environment variables (`SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASSWORD`, `SMTP_FROM`). If they're unset, ZAR simply skips sending — it won't error. See [Environment variables](/reference/environment-variables).
 
 ## Next steps
 
-- **[Environment variables](../reference/environment-variables.md)** — SMTP configuration.
-- **[Dashboard](dashboard.md)** — manage notification settings.
-- **[Trigger modes](../configuration/trigger-modes.md)** — the confidence threshold behind "no PR needed".
+- **[Environment variables](/reference/environment-variables)** — SMTP configuration.
+- **[Dashboard](/features/dashboard)** — manage notification settings.
+- **[Trigger modes](/configuration/trigger-modes)** — the confidence threshold behind "no PR needed".

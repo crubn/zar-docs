@@ -28,7 +28,7 @@ style_guide: |
 @docagent style "Short sentences. Tables for params. A code example per endpoint. No marketing language."
 ```
 
-See [Commands](../features/commands.md). The dashboard exposes the same field if you prefer a text box.
+See [Commands](/features/commands). The dashboard exposes the same field if you prefer a text box.
 
 ## What to put in it
 
@@ -54,8 +54,8 @@ Be concrete. ZAR follows specifics far better than vibes.
 ## What the style guide does not do
 
 - It does not make ZAR **invent** content. ZAR still only edits docs to match real code changes; the style guide shapes *how* it writes, not *whether* it writes.
-- It does not change **which** files ZAR touches — that's [trigger modes](trigger-modes.md) and significance.
-- It does not override **language detection**. ZAR writes each doc in the language it's already in (see [MDX & multilingual](../features/mdx-and-multilingual.md)); the style guide tunes wording within that language.
+- It does not change **which** files ZAR touches — that's [trigger modes](/configuration/trigger-modes) and significance.
+- It does not override **language detection**. ZAR writes each doc in the language it's already in (see [MDX & multilingual](/features/mdx-and-multilingual)); the style guide tunes wording within that language.
 
 ## Tips
 
@@ -65,6 +65,6 @@ Be concrete. ZAR follows specifics far better than vibes.
 
 ## Next steps
 
-- **[`.zar.yml` reference](zar-yml.md)** — the `style_guide` key.
-- **[Commands](../features/commands.md)** — set the style from a PR comment.
-- **[PR feedback](../features/pr-feedback.md)** — see the style applied in a real suggestion.
+- **[`.zar.yml` reference](/configuration/zar-yml)** — the `style_guide` key.
+- **[Commands](/features/commands)** — set the style from a PR comment.
+- **[PR feedback](/features/pr-feedback)** — see the style applied in a real suggestion.

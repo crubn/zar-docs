@@ -5,7 +5,7 @@ description: The complete syntax for ZAR's PR/issue comment commands, including 
 
 # Commands reference
 
-The full grammar for ZAR's comment commands. For a friendlier walkthrough, see [Commands](../features/commands.md).
+The full grammar for ZAR's comment commands. For a friendlier walkthrough, see [Commands](/features/commands).
 
 ## Invocation
 
@@ -30,9 +30,9 @@ The author must have **write** access. `OWNER`, `MEMBER`, and `COLLABORATOR` are
 |--|--|--|--|
 | **Help** | `help`, `commands` | PR or issue | Lists commands with examples. |
 | **Status** | `status`, `settings` | PR or issue | Shows CI gate, auto-commit, `use_updates_branch`, and a style-guide preview. |
-| **Set style** | `style "<text>"`, `style '<text>'`, `style <text>` | PR or issue | Sets the [style guide](../configuration/style-guide.md). Quoted or unquoted. |
-| **CI gate on/off** | `enable ci-gate`, `enable ci gate`, `disable ci-gate`, `disable ci gate` | PR or issue | Toggles the [CI gate](../features/ci-gate.md). Dash or space. |
-| **Auto-commit on/off** | `enable auto-commit`, `enable auto commit`, `disable auto-commit`, `disable auto commit` | PR or issue | Toggles [auto-commit](../features/auto-commit.md). Still requires the `DOCAGENT_WRITE_COMMITS` env var to actually commit. |
+| **Set style** | `style "<text>"`, `style '<text>'`, `style <text>` | PR or issue | Sets the [style guide](/configuration/style-guide). Quoted or unquoted. |
+| **CI gate on/off** | `enable ci-gate`, `enable ci gate`, `disable ci-gate`, `disable ci gate` | PR or issue | Toggles the [CI gate](/features/ci-gate). Dash or space. |
+| **Auto-commit on/off** | `enable auto-commit`, `enable auto commit`, `disable auto-commit`, `disable auto commit` | PR or issue | Toggles [auto-commit](/features/auto-commit). Still requires the `DOCAGENT_WRITE_COMMITS` env var to actually commit. |
 | **Update now** | `update docs now`, `update docs`, `update documentation now`, `update` | **PR only** | Forces a docs analysis on the current PR, ignoring trigger mode. |
 
 ## Behavior notes
@@ -55,5 +55,5 @@ The author must have **write** access. `OWNER`, `MEMBER`, and `COLLABORATOR` are
 
 ## Related
 
-- [Commands](../features/commands.md) — narrative guide.
-- [CI gate](../features/ci-gate.md) · [Auto-commit](../features/auto-commit.md) · [Style guide](../configuration/style-guide.md) — what the toggles control.
+- [Commands](/features/commands) — narrative guide.
+- [CI gate](/features/ci-gate) · [Auto-commit](/features/auto-commit) · [Style guide](/configuration/style-guide) — what the toggles control.

@@ -17,7 +17,7 @@ On every analyzed commit, ZAR posts a commit status with the context name **`zar
 | `pending` | Docs need an update and ZAR is batching it (e.g. "Docs need update — N changes detected"). |
 | `failure` | ZAR couldn't proceed — typically a subscription is required, or analysis errored. |
 
-Because it's a standard commit status, you can see it in the PR's checks and even require it in branch protection (related but distinct from the [CI gate](ci-gate.md)).
+Because it's a standard commit status, you can see it in the PR's checks and even require it in branch protection (related but distinct from the [CI gate](/features/ci-gate)).
 
 ## 2. A comment on the pull request
 
@@ -38,18 +38,18 @@ The substantive output is a separate **docs PR**:
 - ZAR keeps **at most one open docs PR per base branch** — new suggestions update or supersede the existing one rather than piling up.
 - The PR title starts with `docs:` and the body explains the change in plain language.
 
-You review and merge it like any other PR. ZAR never force-pushes over your work, and if a human edits the docs branch, ZAR preserves those edits (see [Safety & guarantees](../concepts/safety-and-guarantees.md#6-human-edits-are-never-destroyed)).
+You review and merge it like any other PR. ZAR never force-pushes over your work, and if a human edits the docs branch, ZAR preserves those edits (see [Safety & guarantees](/concepts/safety-and-guarantees#6-human-edits-are-never-destroyed)).
 
 ## When you'll see nothing
 
 ZAR stays quiet when:
 
-- the change isn't [significant](../configuration/trigger-modes.md#the-significance-filter) (test-only, config-only, or trivial);
+- the change isn't [significant](/configuration/trigger-modes#the-significance-filter) (test-only, config-only, or trivial);
 - the docs already match the change;
-- the [trigger mode](../configuration/trigger-modes.md) is batching the change for later;
-- a [rate limit](../concepts/safety-and-guarantees.md#12-cost-and-scope-are-bounded) has been hit for this PR.
+- the [trigger mode](/configuration/trigger-modes) is batching the change for later;
+- a [rate limit](/concepts/safety-and-guarantees#12-cost-and-scope-are-bounded) has been hit for this PR.
 
-A green `zar/docs` status with no comment usually means "docs look fine" — that's success, not silence-by-error. Check the [dashboard run](dashboard.md) if you want the details.
+A green `zar/docs` status with no comment usually means "docs look fine" — that's success, not silence-by-error. Check the [dashboard run](/features/dashboard) if you want the details.
 
 ## Large changes
 
@@ -57,6 +57,6 @@ For very large diffs, ZAR analyzes up to its configured file cap and notes in th
 
 ## Next steps
 
-- **[CI gate](ci-gate.md)** — turn the `pending` status into a merge blocker.
-- **[Auto-commit](auto-commit.md)** — skip the docs PR and commit fixes directly.
-- **[Dashboard](dashboard.md)** — see the full timeline behind any PR's feedback.
+- **[CI gate](/features/ci-gate)** — turn the `pending` status into a merge blocker.
+- **[Auto-commit](/features/auto-commit)** — skip the docs PR and commit fixes directly.
+- **[Dashboard](/features/dashboard)** — see the full timeline behind any PR's feedback.

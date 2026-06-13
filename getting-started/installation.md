@@ -8,7 +8,7 @@ description: Install the ZAR GitHub App on your repositories, the permissions it
 ZAR runs as a **GitHub App**. There are two ways to install it:
 
 - **Hosted** — install from the dashboard at [app.zarlabs.tech](https://app.zarlabs.tech) (or the GitHub Marketplace listing when available). This is the path most teams want.
-- **Self-hosted** — run your own instance and register your own GitHub App. See [Self-hosting](../self-hosting/overview.md).
+- **Self-hosted** — run your own instance and register your own GitHub App. See [Self-hosting](/self-hosting/overview).
 
 This page covers the hosted install and the permissions ZAR asks for in either case.
 
@@ -46,7 +46,7 @@ Webhook events ZAR subscribes to:
 
 > `installation` and `installation_repositories` are delivered to every GitHub App by default — there's no separate checkbox for them.
 
-Full detail, including the exact `Contents: write` rationale: [Permissions & events](../reference/permissions-and-events.md).
+Full detail, including the exact `Contents: write` rationale: [Permissions & events](/reference/permissions-and-events).
 
 ## What happens right after install
 
@@ -62,12 +62,12 @@ These steps are **idempotent**: reinstalling or adding more repos won't spam you
 
 By default ZAR watches your repository's default branch and behaves conservatively (no auto-commit, no CI gate). Before turning it loose on everything, you'll usually want to:
 
-1. Set a [trigger mode](../configuration/trigger-modes.md) (default: `on_significant_change`).
-2. Optionally add a [`.zar.yml`](../configuration/zar-yml.md) to version your settings in the repo.
-3. Optionally set a [style guide](../configuration/style-guide.md) so edits match your voice.
+1. Set a [trigger mode](/configuration/trigger-modes) (default: `on_significant_change`).
+2. Optionally add a [`.zar.yml`](/configuration/zar-yml) to version your settings in the repo.
+3. Optionally set a [style guide](/configuration/style-guide) so edits match your voice.
 
 ## Next steps
 
-- **[Quickstart](quickstart.md)** — open your first real PR and watch ZAR respond.
-- **[Configuration overview](../configuration/overview.md)** — where settings live and how they combine.
-- **[Self-hosting](../self-hosting/overview.md)** — run ZAR on your own infrastructure.
+- **[Quickstart](/getting-started/quickstart)** — open your first real PR and watch ZAR respond.
+- **[Configuration overview](/configuration/overview)** — where settings live and how they combine.
+- **[Self-hosting](/self-hosting/overview)** — run ZAR on your own infrastructure.

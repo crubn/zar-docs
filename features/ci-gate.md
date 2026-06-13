@@ -7,7 +7,7 @@ description: Block a merge when documentation looks stale — how to enable it, 
 
 The CI gate turns documentation accuracy into a merge requirement. When enabled, ZAR checks a pull request's docs and, if they look stale, **blocks the merge** the same way a failing test would.
 
-It's **off by default**. Turn it on only when you trust ZAR's suggestions on a repo — and consider previewing in [dry-run](../configuration/trigger-modes.md#dry-run) first.
+It's **off by default**. Turn it on only when you trust ZAR's suggestions on a repo — and consider previewing in [dry-run](/configuration/trigger-modes#dry-run) first.
 
 ## Enable it
 
@@ -23,7 +23,7 @@ or in the dashboard (`ci_gate_enabled`). Disable the same way:
 @docagent disable ci-gate
 ```
 
-The author needs **write** access to run the command. See [Commands](commands.md).
+The author needs **write** access to run the command. See [Commands](/features/commands).
 
 ## What it does on a PR
 
@@ -50,7 +50,7 @@ If ZAR can't confidently parse the model's assessment, it **blocks** rather than
 
 ## Dry-run never blocks
 
-If the repo is in [dry-run](../configuration/trigger-modes.md#dry-run), the gate still evaluates and can comment, but it **never** fails the check or blocks the merge. Use this to see how often the gate *would* fire before you let it block real merges.
+If the repo is in [dry-run](/configuration/trigger-modes#dry-run), the gate still evaluates and can comment, but it **never** fails the check or blocks the merge. Use this to see how often the gate *would* fire before you let it block real merges.
 
 ## Make it required (optional)
 
@@ -73,10 +73,10 @@ Or, if the flag is wrong, disable the gate (`@docagent disable ci-gate`) or adju
 | Check run | `docagent/ci-gate` |
 | Labels | `docs-needed`, `ci-blocked` |
 
-Plan note: the CI gate is available on **Team** and **Enterprise** plans. See [Plans](../plans.md).
+Plan note: the CI gate is available on **Team** and **Enterprise** plans. See [Plans](/plans).
 
 ## Next steps
 
-- **[Trigger modes](../configuration/trigger-modes.md)** — and dry-run for safe previews.
-- **[PR feedback](pr-feedback.md)** — the comment and status the gate builds on.
-- **[Settings reference](../reference/settings.md)** — `ci_gate_enabled`, `required_doc_freshness`.
+- **[Trigger modes](/configuration/trigger-modes)** — and dry-run for safe previews.
+- **[PR feedback](/features/pr-feedback)** — the comment and status the gate builds on.
+- **[Settings reference](/reference/settings)** — `ci_gate_enabled`, `required_doc_freshness`.

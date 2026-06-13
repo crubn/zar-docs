@@ -18,7 +18,7 @@ Out of the box, ZAR only **comments** and **opens pull requests**. Committing di
 1. The repository setting `auto_commit_enabled` must be on, **and**
 2. The operator must set the `DOCAGENT_WRITE_COMMITS` environment variable.
 
-If either is missing, ZAR cannot commit — it falls back to a PR. This is intentional: a single misconfiguration can't cause unexpected writes. See [Auto-commit](../features/auto-commit.md).
+If either is missing, ZAR cannot commit — it falls back to a PR. This is intentional: a single misconfiguration can't cause unexpected writes. See [Auto-commit](/features/auto-commit).
 
 ## 3. Suggestions are grounded, never invented
 
@@ -31,7 +31,7 @@ When a repository is in **dry-run** mode, ZAR will:
 - never commit, and
 - never block a merge (the CI gate reports but does not fail the check).
 
-Dry-run forces auto-commit and the CI gate off for that repo regardless of their individual settings. It's the safe way to see what ZAR *would* do. See [Trigger modes](../configuration/trigger-modes.md) and [CI gate](../features/ci-gate.md).
+Dry-run forces auto-commit and the CI gate off for that repo regardless of their individual settings. It's the safe way to see what ZAR *would* do. See [Trigger modes](/configuration/trigger-modes) and [CI gate](/features/ci-gate).
 
 ## 5. The CI gate fails safe
 
@@ -46,7 +46,7 @@ ZAR maintains its docs PR on a dedicated `zar-updates/…` branch. If it hits a 
 Two post-processing checks protect your docs:
 
 - **End-of-file append rejection.** ZAR refuses edits that just dangle new content after a file's natural end (for example, after a License footer). No edit is better than malformed Markdown.
-- **MDX integrity check.** For `.mdx` files, ZAR verifies that YAML frontmatter keys and `import`/`export` statements survive the edit. If an edit would strip them — and break a Nextra build — ZAR rejects it. See [MDX & multilingual](../features/mdx-and-multilingual.md).
+- **MDX integrity check.** For `.mdx` files, ZAR verifies that YAML frontmatter keys and `import`/`export` statements survive the edit. If an edit would strip them — and break a Nextra build — ZAR rejects it. See [MDX & multilingual](/features/mdx-and-multilingual).
 
 ## 8. No feedback loops
 
@@ -58,11 +58,11 @@ Each run is keyed by GitHub's webhook **delivery ID**. If GitHub retries a deliv
 
 ## 10. Concurrent events are serialized per repo
 
-ZAR serializes writes per repository so two near-simultaneous events can't race to create duplicate docs PRs. (On a single instance this is an in-process lock; multi-replica deployments should account for this — see [Self-hosting](../self-hosting/overview.md).)
+ZAR serializes writes per repository so two near-simultaneous events can't race to create duplicate docs PRs. (On a single instance this is an in-process lock; multi-replica deployments should account for this — see [Self-hosting](/self-hosting/overview).)
 
 ## 11. Failures degrade gracefully
 
-If something goes wrong mid-pipeline, ZAR records the error on the run, sets the commit status accordingly, and where possible falls back to a comment instead of crashing. A failed run is visible in the [dashboard](../features/dashboard.md), not silent.
+If something goes wrong mid-pipeline, ZAR records the error on the run, sets the commit status accordingly, and where possible falls back to a comment instead of crashing. A failed run is visible in the [dashboard](/features/dashboard), not silent.
 
 ## 12. Cost and scope are bounded
 
@@ -71,7 +71,7 @@ ZAR caps how much it analyzes and how often:
 - A maximum number of code files per event, and per-file/total character limits on what's sent to Claude.
 - A per-PR analysis rate limit (default: a small number of analyses per PR per hour) to control cost and noise.
 
-Large changes are analyzed up to the cap, and ZAR notes in the PR body when it only covered part of a very large change. Limits are configurable by the operator — see [Environment variables](../reference/environment-variables.md).
+Large changes are analyzed up to the cap, and ZAR notes in the PR body when it only covered part of a very large change. Limits are configurable by the operator — see [Environment variables](/reference/environment-variables).
 
 ## The short version
 
@@ -84,4 +84,4 @@ Large changes are analyzed up to the cap, and ZAR notes in the PR body when it o
 | Reacts to its own commits | **Never** |
 | Records every run | **Always** |
 
-When in doubt, run a repo in **dry-run** and read the [dashboard](../features/dashboard.md) runs. You'll see exactly what ZAR would do before granting it the ability to do it.
+When in doubt, run a repo in **dry-run** and read the [dashboard](/features/dashboard) runs. You'll see exactly what ZAR would do before granting it the ability to do it.

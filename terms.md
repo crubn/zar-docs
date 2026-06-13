@@ -19,11 +19,11 @@ The Service is provided on an **"as is"** and **"as available"** basis, without 
 
 - You must have the right to install ZAR on the repositories you connect it to.
 - You are responsible for reviewing ZAR's suggestions; merging a proposed change is your decision.
-- You must keep your credentials and (if self-hosting) your deployment secure. See [Security](security.md).
+- You must keep your credentials and (if self-hosting) your deployment secure. See [Security](/security).
 
 ## Subscriptions & billing
 
-Access to documentation PR creation requires an active plan or complimentary access. Plans and billing are described on the [dashboard](https://app.zarlabs.tech) and the GitHub Marketplace listing. See [Plans](plans.md).
+Access to documentation PR creation requires an active plan or complimentary access. Plans and billing are described on the [dashboard](https://app.zarlabs.tech) and the GitHub Marketplace listing. See [Plans](/plans).
 
 ## Limitation of liability
 
@@ -35,8 +35,8 @@ These terms may change as the product evolves. Material changes will be reflecte
 
 ## Contact
 
-Questions about these terms: open an issue in [crubn/docagent](https://github.com/crubn/docagent/issues), or use the contact in [Security](security.md) for sensitive matters.
+Questions about these terms: open an issue in [crubn/docagent](https://github.com/crubn/docagent/issues), or use the contact in [Security](/security) for sensitive matters.
 
 ## Related
 
-- [Privacy](privacy.md) · [Security](security.md) · [Plans](plans.md)
+- [Privacy](/privacy) · [Security](/security) · [Plans](/plans)

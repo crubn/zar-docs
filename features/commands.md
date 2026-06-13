@@ -30,9 +30,9 @@ The comment author needs **write** access to the repository. Owners, members, an
 |--|--|
 | `help` | List the commands with examples. |
 | `status` | Show current CI gate, auto-commit, and style-guide settings. |
-| `style "<text>"` | Set the documentation [style guide](../configuration/style-guide.md). |
-| `enable ci-gate` / `disable ci-gate` | Turn the [CI gate](ci-gate.md) on/off. |
-| `enable auto-commit` / `disable auto-commit` | Turn [auto-commit](auto-commit.md) on/off. |
+| `style "<text>"` | Set the documentation [style guide](/configuration/style-guide). |
+| `enable ci-gate` / `disable ci-gate` | Turn the [CI gate](/features/ci-gate) on/off. |
+| `enable auto-commit` / `disable auto-commit` | Turn [auto-commit](/features/auto-commit) on/off. |
 | `update docs now` | Force a docs analysis on the current PR, ignoring trigger mode. |
 
 `ci-gate` / `ci gate` and `auto-commit` / `auto commit` are both accepted (dash or space).
@@ -68,10 +68,10 @@ The comment author needs **write** access to the repository. Owners, members, an
 
 ## Full syntax reference
 
-For the exact accepted forms, aliases, and edge cases, see the [Commands reference](../reference/commands.md).
+For the exact accepted forms, aliases, and edge cases, see the [Commands reference](/reference/commands).
 
 ## Next steps
 
-- **[Style guide](../configuration/style-guide.md)** — what to pass to `style`.
-- **[CI gate](ci-gate.md)** and **[Auto-commit](auto-commit.md)** — what the toggles do.
-- **[Commands reference](../reference/commands.md)** — the complete table.
+- **[Style guide](/configuration/style-guide)** — what to pass to `style`.
+- **[CI gate](/features/ci-gate)** and **[Auto-commit](/features/auto-commit)** — what the toggles do.
+- **[Commands reference](/reference/commands)** — the complete table.

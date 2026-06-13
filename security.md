@@ -10,9 +10,9 @@ description: How ZAR protects your repository, how to report a vulnerability, an
 ## How ZAR protects you
 
 - **Signed webhooks.** Every incoming webhook is verified with an HMAC-SHA256 signature (`X-Hub-Signature-256`) against your webhook secret. Unverified events are rejected and never processed.
-- **Least-privilege permissions.** ZAR requests only the GitHub App scopes it needs. Write to Contents is exercised only when you enable [auto-commit](features/auto-commit.md). See [Permissions & events](reference/permissions-and-events.md).
-- **No writes by default.** Direct commits require two independent opt-ins. See [Safety & guarantees](concepts/safety-and-guarantees.md#2-zar-never-writes-by-default).
-- **Bounded data to third parties.** Only the code excerpts and docs needed to generate a suggestion are sent to Anthropic's Claude. See [Privacy](privacy.md).
+- **Least-privilege permissions.** ZAR requests only the GitHub App scopes it needs. Write to Contents is exercised only when you enable [auto-commit](/features/auto-commit). See [Permissions & events](/reference/permissions-and-events).
+- **No writes by default.** Direct commits require two independent opt-ins. See [Safety & guarantees](/concepts/safety-and-guarantees#2-zar-never-writes-by-default).
+- **Bounded data to third parties.** Only the code excerpts and docs needed to generate a suggestion are sent to Anthropic's Claude. See [Privacy](/privacy).
 
 ## Reporting a vulnerability
 
@@ -37,10 +37,10 @@ If you self-host ZAR:
 
 ## Never commit secrets
 
-Do not commit `.env`, the GitHub App private key (`.pem`), or the database (`docagent.sqlite3`). Use environment variables and secret stores. See [Environment variables](reference/environment-variables.md).
+Do not commit `.env`, the GitHub App private key (`.pem`), or the database (`docagent.sqlite3`). Use environment variables and secret stores. See [Environment variables](/reference/environment-variables).
 
 ## Related
 
-- [Privacy](privacy.md) — what data ZAR handles.
-- [Safety & guarantees](concepts/safety-and-guarantees.md) — the behavioral guarantees.
-- [Self-hosting](self-hosting/overview.md) — secure deployment.
+- [Privacy](/privacy) — what data ZAR handles.
+- [Safety & guarantees](/concepts/safety-and-guarantees) — the behavioral guarantees.
+- [Self-hosting](/self-hosting/overview) — secure deployment.
