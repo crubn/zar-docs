@@ -36,6 +36,12 @@
   <a href="#license">License</a>
 </sub></p>
 
+<p align="center">
+  <img src="assets/demo.gif" alt="ZAR in action: a pull request changes the default timeout in config.py from 60s to 300s; ZAR detects that README.md still documents 60s, proposes the minimal -60s/+300s edit, opens docs PR #43, and the zar/docs check turns green." width="900" />
+</p>
+
+<p align="center"><sub><em>A pull request changes a default — ZAR notices the README went stale, opens the one-line docs fix, and the <code>zar/docs</code> check goes green.</em></sub></p>
+
 ---
 
 > **This repository is the official documentation for ZAR.**

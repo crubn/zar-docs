@@ -13,6 +13,23 @@ Shared images for the docs site and `README.md`.
 
 All vector (SVG) — crisp at any size and editable by hand.
 
+## Animated demo
+
+| File | Used by | Shows |
+|--|--|--|
+| `demo.gif` | `README.md` hero | the end-to-end flow: a PR changes `config.py` (timeout `60s → 300s`), ZAR flags the stale `README.md`, opens docs PR #43 with the minimal `-60s/+300s` edit, and `zar/docs` goes green |
+| `demo.html` | source for `demo.gif` | a self-contained, deterministic animation (`window.seek(ms)`) — edit this, not the GIF |
+
+### Regenerating `demo.gif`
+
+`demo.html` exposes `window.TOTAL_MS` and a pure `window.seek(ms)`, so any headless browser can step it frame-by-frame. Capture frames at 12 fps from a `1000×600` viewport, then assemble with ffmpeg:
+
+```bash
+ffmpeg -y -framerate 12 -i frames/f%04d.png \
+  -vf "fps=12,scale=900:-1:flags=lanczos,split[s0][s1];[s0]palettegen=max_colors=192:stats_mode=full[p];[s1][p]paletteuse=dither=bayer:bayer_scale=3" \
+  demo.gif
+```
+
 ## Screenshots (currently illustrative mockups)
 
 These are **SVG mockups** standing in until real product screenshots are added:
