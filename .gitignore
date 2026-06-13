@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Mintlify local preview
+.mintlify/
+node_modules/
+
+# Logs
+*.log

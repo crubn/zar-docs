@@ -1,0 +1,99 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "ZAR",
+  "description": "ZAR keeps your repository documentation accurate as the code changes. PR-native, powered by Claude + tree-sitter.",
+  "colors": {
+    "primary": "#6366f1",
+    "light": "#818cf8",
+    "dark": "#4f46e5"
+  },
+  "favicon": "/assets/favicon.png",
+  "navigation": {
+    "groups": [
+      {
+        "group": "Getting started",
+        "pages": [
+          "getting-started/introduction",
+          "getting-started/quickstart",
+          "getting-started/installation"
+        ]
+      },
+      {
+        "group": "Concepts",
+        "pages": [
+          "concepts/how-it-works",
+          "concepts/safety-and-guarantees"
+        ]
+      },
+      {
+        "group": "Configuration",
+        "pages": [
+          "configuration/overview",
+          "configuration/zar-yml",
+          "configuration/trigger-modes",
+          "configuration/style-guide"
+        ]
+      },
+      {
+        "group": "Features",
+        "pages": [
+          "features/pr-feedback",
+          "features/ci-gate",
+          "features/auto-commit",
+          "features/commands",
+          "features/dashboard",
+          "features/cross-repo-docs",
+          "features/mdx-and-multilingual",
+          "features/notifications"
+        ]
+      },
+      {
+        "group": "Reference",
+        "pages": [
+          "reference/settings",
+          "reference/commands",
+          "reference/environment-variables",
+          "reference/permissions-and-events"
+        ]
+      },
+      {
+        "group": "Self-hosting",
+        "pages": [
+          "self-hosting/overview",
+          "self-hosting/railway",
+          "self-hosting/docker"
+        ]
+      },
+      {
+        "group": "More",
+        "pages": [
+          "plans",
+          "troubleshooting",
+          "faq",
+          "security",
+          "privacy",
+          "terms"
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/crubn/docagent"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://app.zarlabs.tech"
+    }
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/crubn/docagent"
+    }
+  }
+}
