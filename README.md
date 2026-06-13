@@ -1,6 +1,5 @@
 <p align="center">
-  <!-- Add assets/banner.png (1280×640 recommended) and it will render here. -->
-  <img src="assets/banner.png" alt="ZAR — keep your docs accurate, automatically" width="100%" onerror="this.style.display='none'" />
+  <img src="assets/banner.svg" alt="ZAR — keep your documentation accurate as the code changes" width="100%" />
 </p>
 
 <h1 align="center">ZAR</h1>
@@ -103,7 +102,7 @@ Prefer to run your own instance? See **[Self-hosting](self-hosting/overview.md)*
 | **Features** | [PR feedback](features/pr-feedback.md) · [CI gate](features/ci-gate.md) · [Auto-commit](features/auto-commit.md) · [Commands](features/commands.md) · [Dashboard](features/dashboard.md) · [Cross-repo docs](features/cross-repo-docs.md) · [MDX & multilingual](features/mdx-and-multilingual.md) · [Notifications](features/notifications.md) |
 | **Reference** | [All settings](reference/settings.md) · [Commands](reference/commands.md) · [Environment variables](reference/environment-variables.md) · [Permissions & events](reference/permissions-and-events.md) |
 | **Self-hosting** | [Overview](self-hosting/overview.md) · [Railway](self-hosting/railway.md) · [Docker](self-hosting/docker.md) |
-| **More** | [Plans](plans.md) · [Troubleshooting](troubleshooting.md) · [FAQ](faq.md) · [Security](security.md) · [Privacy](privacy.md) · [Terms](terms.md) |
+| **More** | [Plans](plans.md) · [Troubleshooting](troubleshooting.md) · [FAQ](faq.md) · [Security](security.md) · [Privacy](privacy.md) · [Terms](terms.md) · [Changelog](changelog.md) |
 
 ## Commands
 

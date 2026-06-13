@@ -8,7 +8,7 @@
     "light": "#818cf8",
     "dark": "#4f46e5"
   },
-  "favicon": "/assets/favicon.png",
+  "favicon": "/assets/favicon.svg",
   "navigation": {
     "groups": [
       {
@@ -73,7 +73,8 @@
           "faq",
           "security",
           "privacy",
-          "terms"
+          "terms",
+          "changelog"
         ]
       }
     ]
