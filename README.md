@@ -145,8 +145,8 @@ ZAR is a subscription product. A paid plan (or complimentary access) is required
 | Plan | Repos | Monthly commits | CI gate | Cross-repo docs | MCP server |
 |--|--|--|--|--|--|
 | **Pro** | 10 | 500 | — | — | — |
-| **Team** | Unlimited | Unlimited | ✓ | ✓ | ✓ |
-| **Enterprise** | Unlimited | Unlimited | ✓ | ✓ | ✓ |
+| **Team** | Unlimited | Unlimited | ✓ | ✓ | Soon |
+| **Enterprise** | Unlimited | Unlimited | ✓ | ✓ | Soon |
 
 Current pricing is shown on the **[dashboard](https://app.zarlabs.tech)** and the GitHub Marketplace listing. See **[Plans](plans.md)** for the full breakdown.
 

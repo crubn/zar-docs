@@ -19,9 +19,9 @@ There is no perpetual free tier in the product today; pricing and any trial are 
 | Style guide | ✓ | ✓ | ✓ |
 | [CI gate](/features/ci-gate) | — | ✓ | ✓ |
 | [Cross-repo docs](/features/cross-repo-docs) | — | ✓ | ✓ |
-| MCP server | — | ✓ | ✓ |
+| MCP server | — | Soon | Soon |
 
-Pro is the entry tier for individuals and small teams. Team unlocks the org-wide controls — the merge gate, cross-repo docs, and the MCP server. Enterprise carries the same capabilities as Team with arrangements suited to larger organizations.
+Pro is the entry tier for individuals and small teams. Team unlocks the org-wide controls — the merge gate and cross-repo docs; an MCP server for Cursor and Claude Desktop is coming soon. Enterprise carries the same capabilities as Team with arrangements suited to larger organizations.
 
 ## How access is decided
 
