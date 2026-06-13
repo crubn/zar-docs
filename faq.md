@@ -73,4 +73,4 @@ See [Security](/security).
 
 ## Didn't find your answer?
 
-Check [Troubleshooting](/troubleshooting), or open an issue in [crubn/docagent](https://github.com/crubn/docagent/issues).
+Check [Troubleshooting](/troubleshooting), or open an issue in [crubn/zar-docs](https://github.com/crubn/zar-docs/issues).

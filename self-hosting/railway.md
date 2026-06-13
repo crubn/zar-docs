@@ -9,7 +9,7 @@ description: Run ZAR on Railway with managed Postgres and Redis.
 
 ## 1. Create the service
 
-1. Create a new Railway project from the [ZAR repository](https://github.com/crubn/docagent).
+1. Create a new Railway project from your copy of the ZAR source (it includes `railway.toml`, `nixpacks.toml`, and `start.py`).
 2. Railway detects the Dockerfile / Nixpacks build and starts a web service.
 
 ## 2. Add Postgres and Redis

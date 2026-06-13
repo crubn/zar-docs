@@ -35,7 +35,7 @@ These terms may change as the product evolves. Material changes will be reflecte
 
 ## Contact
 
-Questions about these terms: open an issue in [crubn/docagent](https://github.com/crubn/docagent/issues), or use the contact in [Security](/security) for sensitive matters.
+Questions about these terms: open an issue in [crubn/zar-docs](https://github.com/crubn/zar-docs/issues), or use the contact in [Security](/security) for sensitive matters.
 
 ## Related
 

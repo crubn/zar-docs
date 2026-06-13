@@ -1,6 +1,6 @@
 # Contributing to the ZAR docs
 
-These docs describe [ZAR](https://github.com/crubn/docagent), a GitHub App that keeps repository documentation accurate as code changes. This repo holds the documentation only; the product code lives in [`crubn/docagent`](https://github.com/crubn/docagent).
+These docs describe ZAR, a GitHub App that keeps repository documentation accurate as code changes. This repo ([`crubn/zar-docs`](https://github.com/crubn/zar-docs)) holds the documentation; the ZAR product code lives in a separate private repository.
 
 ## Ways to help
 
@@ -32,9 +32,9 @@ This serves the docs at `http://localhost:3000` using `docs.json`.
 
 - Write for a smart person who hasn't seen the code.
 - Prefer concrete nouns and active voice. "ZAR opens a PR", not "a PR is opened".
-- Every claim about behavior should match the code. When in doubt, link to the relevant page in [`crubn/docagent`](https://github.com/crubn/docagent).
+- Every claim about behavior should match the code. When in doubt, open an issue to confirm the behavior.
 - Keep examples copy-pasteable.
 
 ## Reporting product bugs
 
-This repo is for documentation. For bugs in ZAR itself, open an issue in [`crubn/docagent`](https://github.com/crubn/docagent/issues).
+This repo is for documentation. For bugs in ZAR itself, open an issue in [`crubn/zar-docs`](https://github.com/crubn/zar-docs/issues).

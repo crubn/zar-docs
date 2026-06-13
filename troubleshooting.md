@@ -72,4 +72,4 @@ ZAR keeps at most one open docs PR per base branch on a single instance. If you 
 
 - Open the [run view](/features/dashboard#run-view) and read the timeline and `error` field.
 - Turn on **debug mode** for the repo for verbose logs and an extra "Debug Info" comment.
-- For product bugs, open an issue in [crubn/docagent](https://github.com/crubn/docagent/issues).
+- For product bugs, open an issue in [crubn/zar-docs](https://github.com/crubn/zar-docs/issues).

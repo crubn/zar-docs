@@ -87,7 +87,7 @@
     "links": [
       {
         "label": "GitHub",
-        "href": "https://github.com/crubn/docagent"
+        "href": "https://github.com/crubn/zar-docs"
       }
     ],
     "primary": {
@@ -98,7 +98,7 @@
   },
   "footer": {
     "socials": {
-      "github": "https://github.com/crubn/docagent"
+      "github": "https://github.com/crubn/zar-docs"
     }
   }
 }

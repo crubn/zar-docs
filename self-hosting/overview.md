@@ -18,7 +18,7 @@ ZAR is a FastAPI application you can run anywhere that gives you a public HTTPS 
 
 You register your own GitHub App (the hosted ZAR App is separate). The repo ships a manifest to make this one click:
 
-1. Use `github-app-manifest.yml` from the [product repo](https://github.com/crubn/docagent).
+1. Create a new GitHub App with the [permissions and events](/reference/permissions-and-events) ZAR needs (the ZAR source ships a `github-app-manifest.yml` you can register from if you have access to it).
 2. In GitHub: **Settings → Developer settings → GitHub Apps → New GitHub App → Register from manifest** (or create manually with the same [permissions and events](/reference/permissions-and-events)).
 3. Set the **Webhook URL** to `https://YOUR_DOMAIN/github/webhook`.
 4. Generate and download a **private key** (`.pem`).
