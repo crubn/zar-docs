@@ -52,6 +52,6 @@ Admin and MCP routes exist behind their own secrets (`DOCAGENT_ADMIN_TOKEN`, `AD
 
 ## Related
 
-- [Installation](/getting-started/installation) — installing with these permissions.
+- [Installation](/installation) — installing with these permissions.
 - [Self-hosting overview](/self-hosting/overview) — registering your own App.
 - [Security](/security) — webhook verification and hardening.

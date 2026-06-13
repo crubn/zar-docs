@@ -33,7 +33,7 @@ GitHub will ask you to approve ZAR's [permissions](/reference/permissions-and-ev
 
 Back on the dashboard, the repository now shows as **connected**.
 
-> On a fresh install, ZAR also opens a small **welcome PR** (`zar/welcome`) on your first repository that explains how it works. Merging it is optional — it's there to show you the shape of a ZAR PR. See [Onboarding](/getting-started/installation#what-happens-right-after-install).
+> On a fresh install, ZAR also opens a small **welcome PR** (`zar/welcome`) on your first repository that explains how it works. Merging it is optional — it's there to show you the shape of a ZAR PR. See [Onboarding](/installation#what-happens-right-after-install).
 
 ## Step 3 — (Optional) Validate the connection
 

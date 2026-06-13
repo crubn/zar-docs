@@ -47,6 +47,6 @@ Most docs tooling lives in a separate place you have to remember to visit. ZAR l
 
 ## Next steps
 
-- **[Quickstart](/getting-started/quickstart)** — install ZAR and see your first suggestion in a few minutes.
+- **[Quickstart](/quickstart)** — install ZAR and see your first suggestion in a few minutes.
 - **[How ZAR works](/concepts/how-it-works)** — the full pipeline, end to end.
 - **[Safety & guarantees](/concepts/safety-and-guarantees)** — exactly what ZAR will and won't do to your repo.

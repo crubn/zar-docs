@@ -9,7 +9,7 @@ The dashboard at **[app.zarlabs.tech](https://app.zarlabs.tech)** is where you m
 
 ## Repositories
 
-After you [connect a repo](/getting-started/installation), it appears in your repository list. From there you can open its settings and activity.
+After you [connect a repo](/installation), it appears in your repository list. From there you can open its settings and activity.
 
 ## Per-repo settings
 
@@ -58,7 +58,7 @@ Under **Advanced**, the dashboard offers:
 - **Validate GitHub App** — checks that the App ID, private key, and webhook secret are consistent.
 - **Send test webhook** — emits a synthetic event so you can confirm the pipeline end-to-end without making a real commit.
 
-Both are described in the [Quickstart](/getting-started/quickstart#step-3--optional-validate-the-connection).
+Both are described in the [Quickstart](/quickstart#step-3--optional-validate-the-connection).
 
 ## Next steps
 

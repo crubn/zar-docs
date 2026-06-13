@@ -18,9 +18,9 @@
       {
         "group": "Getting started",
         "pages": [
-          "getting-started/introduction",
-          "getting-started/quickstart",
-          "getting-started/installation"
+          "introduction",
+          "quickstart",
+          "installation"
         ]
       },
       {

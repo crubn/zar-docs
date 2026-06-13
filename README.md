@@ -12,7 +12,7 @@
   <a href="https://app.zarlabs.tech">
     <img src="https://img.shields.io/badge/Dashboard-app.zarlabs.tech-6366f1?style=for-the-badge&labelColor=0f172a" alt="Open the ZAR dashboard" />
   </a>
-  <a href="getting-started/quickstart.md">
+  <a href="quickstart.md">
     <img src="https://img.shields.io/badge/Quickstart-5%20min-22c55e?style=for-the-badge&labelColor=0f172a" alt="Quickstart" />
   </a>
 </p>
@@ -40,7 +40,7 @@
 
 > **This repository is the official documentation for ZAR.**
 > Browse it here on GitHub, or read the rendered site once it's published with [Mintlify](https://mintlify.com).
-> New here? Start with the **[Quickstart](getting-started/quickstart.md)**.
+> New here? Start with the **[Quickstart](quickstart.md)**.
 
 ## What is ZAR
 
@@ -88,7 +88,7 @@ The fastest path is the hosted app — no infrastructure required.
 3. Open a pull request that changes real behavior — a new config flag, a new endpoint, a renamed field.
 4. ZAR reviews the diff and either comments with proposed doc edits or marks the docs in sync.
 
-Step-by-step with screenshots and verification: **[Quickstart](getting-started/quickstart.md)**.
+Step-by-step with screenshots and verification: **[Quickstart](quickstart.md)**.
 
 Prefer to run your own instance? See **[Self-hosting](self-hosting/overview.md)**.
 
@@ -96,7 +96,7 @@ Prefer to run your own instance? See **[Self-hosting](self-hosting/overview.md)*
 
 | Section | Page |
 |--|--|
-| **Getting started** | [Introduction](getting-started/introduction.md) · [Quickstart](getting-started/quickstart.md) · [Installation](getting-started/installation.md) |
+| **Getting started** | [Introduction](introduction.md) · [Quickstart](quickstart.md) · [Installation](installation.md) |
 | **Concepts** | [How ZAR works](concepts/how-it-works.md) · [Safety & guarantees](concepts/safety-and-guarantees.md) |
 | **Configuration** | [Overview & precedence](configuration/overview.md) · [`.zar.yml` reference](configuration/zar-yml.md) · [Trigger modes](configuration/trigger-modes.md) · [Style guide](configuration/style-guide.md) |
 | **Features** | [PR feedback](features/pr-feedback.md) · [CI gate](features/ci-gate.md) · [Auto-commit](features/auto-commit.md) · [Commands](features/commands.md) · [Dashboard](features/dashboard.md) · [Cross-repo docs](features/cross-repo-docs.md) · [MDX & multilingual](features/mdx-and-multilingual.md) · [Notifications](features/notifications.md) |

@@ -68,6 +68,6 @@ By default ZAR watches your repository's default branch and behaves conservative
 
 ## Next steps
 
-- **[Quickstart](/getting-started/quickstart)** — open your first real PR and watch ZAR respond.
+- **[Quickstart](/quickstart)** — open your first real PR and watch ZAR respond.
 - **[Configuration overview](/configuration/overview)** — where settings live and how they combine.
 - **[Self-hosting](/self-hosting/overview)** — run ZAR on your own infrastructure.
