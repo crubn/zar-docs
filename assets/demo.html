@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ZAR — Code → Docs</title>
+<style>
+  :root{
+    --sans:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --page:#ffffff; --panel:#f6f8fa; --border:#d0d7de; --faint-div:#eaeef2;
+    --ink:#1f2328; --muted:#59636e; --faint:#8c959f;
+    --indigo:#6366f1; --indigo-l:#818cf8;
+    --del-bg:#ffebe9; --del-tx:#82071e; --add-bg:#dafbe1; --add-tx:#0a3622;
+    --danger:#cf222e; --warn:#bf8700; --success:#22c55e;
+  }
+  html,body{margin:0;padding:0;background:#ffffff;}
+  *{box-sizing:border-box;}
+  #stage{
+    position:absolute; top:0; left:0;
+    width:1000px; height:600px;
+    background:var(--page);
+    font-family:var(--sans);
+    color:var(--ink);
+    overflow:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  .abs{position:absolute;}
+  .mono{font-family:var(--mono);}
+
+  /* ---- Header ---- */
+  #brand{position:absolute; left:32px; top:30px; display:flex; align-items:center; gap:12px;}
+  #brandBadge{
+    width:34px; height:34px; border-radius:9px; background:var(--indigo);
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-weight:800; font-size:19px; font-family:var(--sans);
+    line-height:1;
+  }
+  #brandText{font-size:15px; font-weight:600; color:var(--ink); letter-spacing:.2px;}
+  #brandSub{font-size:12.5px; color:var(--muted); font-weight:500;}
+
+  /* ---- Panel card ---- */
+  .card{
+    position:absolute; top:96px; width:404px; height:300px;
+    background:var(--page); border:1px solid var(--border);
+    border-radius:12px; overflow:hidden;
+  }
+  #leftCard{left:32px;}
+  #rightCard{left:564px;}
+  .cardHead{
+    height:42px; background:var(--panel); border-bottom:1px solid var(--faint-div);
+    display:flex; align-items:center; gap:9px; padding:0 14px;
+  }
+  .dot{width:11px;height:11px;border-radius:50%;}
+  .fname{font-family:var(--mono); font-size:12.5px; color:var(--muted); margin-left:6px; font-weight:500;}
+  .badgePill{
+    margin-left:auto; font-size:11px; font-weight:600; padding:3px 9px;
+    border-radius:999px; border:1px solid var(--border); color:var(--muted);
+    background:var(--page); font-family:var(--sans);
+  }
+  .codeBody{padding:16px 16px 0 16px; font-family:var(--mono); font-size:13px; line-height:25px; color:var(--ink);}
+  .ln{display:flex; white-space:pre;}
+  .gut{width:26px; color:var(--faint); text-align:right; padding-right:14px; user-select:none;}
+  .kw{color:#cf222e;}      /* keyword red-ish (github light: actually red for keyword) */
+  .kw2{color:#0550ae;}     /* def/blue */
+  .num{color:#0550ae;}
+  .str{color:#0a3069;}
+  .com{color:var(--faint);}
+  .var{color:#953800;}
+
+  /* token swap chip */
+  #valWrap{position:relative; display:inline-block; width:54px; height:21px; vertical-align:-4px;}
+  .valTok{position:absolute; left:0; top:0; font-family:var(--mono); font-size:13px; line-height:21px; white-space:pre;}
+
+  /* README rendered lines / diff */
+  .docBody{padding:18px 18px 0 18px;}
+  .docH{font-family:var(--sans); font-size:17px; font-weight:700; color:var(--ink); margin:0 0 4px 0; line-height:1.3;}
+  .docHr{height:1px; background:var(--faint-div); margin:10px 0 14px 0;}
+  .docP{font-family:var(--sans); font-size:13.5px; line-height:22px; color:var(--muted); margin:0 0 10px 0;}
+  .diffRow{position:relative; font-family:var(--mono); font-size:13px; line-height:24px; height:24px; border-radius:5px; padding:0 10px 0 26px; white-space:pre;}
+  .diffSign{position:absolute; left:9px; top:0; font-weight:700;}
+  .diffDel{background:var(--del-bg); color:var(--del-tx);}
+  .diffAdd{background:var(--add-bg); color:var(--add-tx);}
+  .diffDel .diffSign{color:var(--del-tx);}
+  .diffAdd .diffSign{color:var(--add-tx);}
+
+  /* ---- Connector / beam (center gutter 468..564, width 96) ---- */
+  #beamTrack{position:absolute; left:436px; top:246px; width:128px; height:0;}
+  #beamLine{position:absolute; left:0; top:0; height:2px; border-radius:2px; background:var(--indigo-l);}
+  #beamHead{position:absolute; top:-3px; width:8px; height:8px; border-radius:50%; background:var(--indigo); box-shadow:0 0 0 4px rgba(99,102,241,0.18);}
+  #zarChip{
+    position:absolute; left:466px; top:212px; width:68px; height:68px;
+    border-radius:50%; background:var(--indigo);
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-weight:800; font-size:30px; font-family:var(--sans);
+    border:4px solid #ffffff; line-height:1;
+  }
+  #zarRing{
+    position:absolute; left:458px; top:204px; width:84px; height:84px;
+    border-radius:50%; border:2px solid var(--indigo-l);
+  }
+  #zarLabel{
+    position:absolute; left:436px; top:298px; width:128px; text-align:center;
+    font-size:11.5px; font-weight:600; color:var(--muted); font-family:var(--sans);
+  }
+
+  /* status row under cards */
+  #statusBar{
+    position:absolute; left:32px; top:430px; width:936px; height:62px;
+    background:var(--panel); border:1px solid var(--border); border-radius:12px;
+    display:flex; align-items:center; padding:0 20px; gap:14px;
+  }
+  #stCheck{width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex:0 0 auto;}
+  #stMain{font-size:14px; font-weight:600; color:var(--ink); font-family:var(--sans);}
+  #stSub{font-size:12.5px; color:var(--muted); font-family:var(--sans); margin-left:auto;}
+  #ciPill{
+    display:inline-flex; align-items:center; gap:7px; font-family:var(--mono); font-size:12px;
+    padding:5px 11px; border-radius:999px; border:1px solid var(--border); background:var(--page);
+    font-weight:600;
+  }
+  #ciDot{width:9px;height:9px;border-radius:50%;}
+
+  /* final caption */
+  #caption{
+    position:absolute; left:32px; top:516px; width:936px; text-align:center;
+    font-size:15px; font-weight:600; color:var(--ink); font-family:var(--sans);
+  }
+  #captionSub{
+    position:absolute; left:32px; top:540px; width:936px; text-align:center;
+    font-size:12.5px; color:var(--muted); font-family:var(--sans);
+  }
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <!-- Brand -->
+  <div id="brand">
+    <div id="brandBadge">Z</div>
+    <div>
+      <div id="brandText">ZAR</div>
+      <div id="brandSub">keeps your docs in sync with code</div>
+    </div>
+  </div>
+  <div class="abs" id="prTag" style="right:32px; top:34px; font-size:12.5px; color:var(--muted); font-family:var(--mono); font-weight:600;">pull&nbsp;request&nbsp;#42</div>
+
+  <!-- LEFT: code editor -->
+  <div class="card" id="leftCard">
+    <div class="cardHead">
+      <span class="dot" style="background:#ff5f57;"></span>
+      <span class="dot" style="background:#febc2e;"></span>
+      <span class="dot" style="background:#28c840;"></span>
+      <span class="fname">config.py</span>
+      <span class="badgePill" id="codeBadge">changed</span>
+    </div>
+    <div class="codeBody">
+      <div class="ln"><span class="gut">12</span><span><span class="com"># request settings</span></span></div>
+      <div class="ln"><span class="gut">13</span><span><span class="var">DEFAULT_TIMEOUT</span> = <span id="valWrap"><span class="valTok num" id="valOld">60</span><span class="valTok num" id="valNew">300</span></span>  <span class="com"># seconds</span></span></div>
+      <div class="ln"><span class="gut">14</span><span><span class="var">MAX_RETRIES</span>     = <span class="num">3</span></span></div>
+      <div class="ln"><span class="gut">15</span><span><span class="var">VERIFY_SSL</span>      = <span class="kw2">True</span></span></div>
+    </div>
+  </div>
+
+  <!-- RIGHT: README -->
+  <div class="card" id="rightCard">
+    <div class="cardHead">
+      <span class="dot" style="background:#ff5f57;"></span>
+      <span class="dot" style="background:#febc2e;"></span>
+      <span class="dot" style="background:#28c840;"></span>
+      <span class="fname">README.md</span>
+      <span class="badgePill" id="docBadge">docs</span>
+    </div>
+    <div class="docBody">
+      <div class="docH">Configuration</div>
+      <div class="docHr"></div>
+      <div class="docP" id="docIntro">Tune client behavior in <span class="mono" style="font-size:12.5px;color:var(--ink);">config.py</span>.</div>
+
+      <div id="staleRow" class="diffRow mono" style="background:var(--page);color:var(--ink);padding-left:10px;">Default request timeout: 60s</div>
+
+      <div id="diffDel" class="diffRow diffDel"><span class="diffSign">-</span>Default request timeout: 60s</div>
+      <div id="diffAdd" class="diffRow diffAdd"><span class="diffSign">+</span>Default request timeout: 300s</div>
+    </div>
+  </div>
+
+  <!-- Connector beam + ZAR chip -->
+  <div id="beamTrack"><div id="beamLine"></div><div id="beamHead"></div></div>
+  <div id="zarRing"></div>
+  <div id="zarChip">Z</div>
+  <div id="zarLabel">ZAR scanning</div>
+
+  <!-- Status bar -->
+  <div id="statusBar">
+    <div id="stCheck"></div>
+    <div id="stMain">Reviewing changes…</div>
+    <div id="ciPill"><span id="ciDot"></span><span id="ciText">zar/docs · pending</span></div>
+  </div>
+
+  <!-- Final caption -->
+  <div id="caption">Docs back in sync</div>
+  <div id="captionSub">ZAR opened docs PR #43 — your docs stay true.</div>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  window.TOTAL_MS = 8400;
+
+  // ---------- helpers ----------
+  function clamp(x,a,b){ return x<a?a:(x>b?b:x); }
+  function easeInOutCubic(t){ t=clamp(t,0,1); return t<0.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; }
+  function easeOutCubic(t){ t=clamp(t,0,1); return 1-Math.pow(1-t,3); }
+  function easeOutBack(t){ t=clamp(t,0,1); var c1=1.70158, c3=c1+1; return 1+c3*Math.pow(t-1,3)+c1*Math.pow(t-1,2); }
+  // normalized progress of ms within [a,b] -> 0..1 (clamped)
+  function seg(ms,a,b){ if(b<=a) return ms>=b?1:0; return clamp((ms-a)/(b-a),0,1); }
+  function lerp(a,b,t){ return a+(b-a)*t; }
+  function px(n){ return n.toFixed(2)+'px'; }
+  function mix(c1,c2,t){
+    t=clamp(t,0,1);
+    var r=Math.round(lerp(c1[0],c2[0],t));
+    var g=Math.round(lerp(c1[1],c2[1],t));
+    var b=Math.round(lerp(c1[2],c2[2],t));
+    return 'rgb('+r+','+g+','+b+')';
+  }
+  var C_MUTED=[89,99,110], C_WARN=[191,135,0], C_SUCCESS=[34,197,94], C_INK=[31,35,40];
+
+  // ---------- elements ----------
+  var el = function(id){ return document.getElementById(id); };
+  var stage=el('stage');
+  var brand=el('brand'), prTag=el('prTag');
+  var leftCard=el('leftCard'), rightCard=el('rightCard');
+  var codeBadge=el('codeBadge'), docBadge=el('docBadge');
+  var valOld=el('valOld'), valNew=el('valNew');
+  var docIntro=el('docIntro');
+  var staleRow=el('staleRow'), diffDel=el('diffDel'), diffAdd=el('diffAdd');
+  var beamTrack=el('beamTrack'), beamLine=el('beamLine'), beamHead=el('beamHead');
+  var zarChip=el('zarChip'), zarRing=el('zarRing'), zarLabel=el('zarLabel');
+  var statusBar=el('statusBar'), stCheck=el('stCheck'), stMain=el('stMain');
+  var ciPill=el('ciPill'), ciDot=el('ciDot'), ciText=el('ciText');
+  var caption=el('caption'), captionSub=el('captionSub');
+
+  // check SVGs (inline, deterministic)
+  var SVG_CHECK_WHITE = '<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 4.5 6.5 11.5 3 8" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  // green-stroke check for use inside the light-green success pill
+  var SVG_CHECK_GREEN_INK = '<svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M13 4.5 6.5 11.5 3 8" stroke="#0a3622" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  // beam track geometry: track is 128px wide
+  var TRACK_W = 128;
+
+  // ---------- the timeline ----------
+  // Beats (ms):
+  //  0    intro: brand + cards fade in
+  //  900  code value swaps 60 -> 300
+  //  2000 ZAR "notices": chip pulse, stale README highlighted
+  //  2600 beam sweeps left -> right
+  //  3700 beam lands -> README diff reveals (- 60s / + 300s)
+  //  5000 status: pending(amber) -> success(green); PR #43
+  //  6000 resolved checks appear on both cards
+  //  6600 caption "Docs back in sync"
+  //  7200..8400 HOLD static
+  function seek(ms){
+    ms = clamp(ms, 0, window.TOTAL_MS);
+
+    // ---- INTRO: brand + cards assemble (fast, with a visible floor so seek(0) reads as a forming scene) ----
+    var FLOOR = 0.18; // never fully blank at t=0
+    var pIntro = lerp(FLOOR,1,easeOutCubic(seg(ms,0,520)));
+    brand.style.opacity = pIntro.toFixed(3);
+    brand.style.transform = 'translateY('+px(lerp(6,0,easeOutCubic(seg(ms,0,520))))+')';
+    var pPr = lerp(FLOOR,1,easeOutCubic(seg(ms,150,700)));
+    prTag.style.opacity = pPr.toFixed(3);
+
+    // cards fade/rise, staggered
+    var pLraw = easeOutCubic(seg(ms,120,700));
+    var pL = lerp(FLOOR,1,pLraw);
+    leftCard.style.opacity = pL.toFixed(3);
+    leftCard.style.transform = 'translateY('+px(lerp(10,0,pLraw))+')';
+    var pRraw = easeOutCubic(seg(ms,260,840));
+    var pR = lerp(FLOOR,1,pRraw);
+    rightCard.style.opacity = pR.toFixed(3);
+    rightCard.style.transform = 'translateY('+px(lerp(10,0,pRraw))+')';
+
+    // ---- CODE VALUE SWAP: 60 -> 300 (900..1700) ----
+    // old slides up & fades red-out; new slides in from below, green-in then settles.
+    var sw = seg(ms,900,1700);
+    var swE = easeInOutCubic(sw);
+    // old token
+    valOld.style.opacity = (1 - easeOutCubic(seg(ms,900,1300))).toFixed(3);
+    valOld.style.transform = 'translateY('+px(lerp(0,-16,easeInOutCubic(seg(ms,900,1400))))+')';
+    valOld.style.color = sw>0 ? 'var(--del-tx)' : 'var(--num,#0550ae)';
+    // new token
+    var newIn = seg(ms,1080,1700);
+    valNew.style.opacity = easeOutCubic(newIn).toFixed(3);
+    valNew.style.transform = 'translateY('+px(lerp(16,0,easeOutBack(newIn)))+')';
+    // green flash on arrival, fading to normal code color
+    var flash = 1 - easeOutCubic(seg(ms,1500,2300));
+    if(ms < 1080){ valNew.style.color='#0550ae'; }
+    else { valNew.style.color = mix([10,54,34],[5,80,174], 1-flash); } // add-tx -> code blue
+    // code badge "changed" -> emphasize during swap (no layout move)
+    var cbE = easeOutCubic(seg(ms,900,1400));
+    codeBadge.style.color = mix(C_MUTED, C_WARN, cbE);
+    codeBadge.style.borderColor = mix([208,215,222],[191,135,0], cbE*0.0); // keep border subtle
+
+    // chip + status assemble with the same floor as the cards
+    var chipIn = lerp(0.18,1,easeOutCubic(seg(ms,200,780)));
+    zarChip.style.opacity = chipIn.toFixed(3);
+    zarRing.style.borderColor = 'var(--indigo-l)';
+    statusBar.style.opacity = lerp(0.18,1,easeOutCubic(seg(ms,340,920))).toFixed(3);
+
+    // ---- ZAR NOTICE (2000..2600): ring pulse + stale README flagged ----
+    var notice = seg(ms,1950,2500);
+    // chip subtle scale pulse (one breath)
+    var pulse = Math.sin(clamp(seg(ms,1950,2700),0,1)*Math.PI); // 0..1..0
+    var chipScale = 1 + 0.05*pulse;
+    zarChip.style.transform = 'scale('+chipScale.toFixed(3)+')';
+    // ring expands & fades as a scan ping
+    var ring = seg(ms,2000,2800);
+    var ringE = easeOutCubic(ring);
+    zarRing.style.opacity = (ms<2000?0:(1-ringE)).toFixed(3);
+    var ringScale = lerp(1,1.42,ringE);
+    zarRing.style.transform = 'scale('+ringScale.toFixed(3)+')';
+    // stale README row: starts as plain doc text, gets a soft red wash to flag "stale"
+    var staleFlag = easeInOutCubic(seg(ms,2050,2550));
+    // only flag before the diff replaces it (diff reveal starts ~3700)
+    var staleVisible = seg(ms,3550,3850); // fade out the single stale row as diff appears
+    var staleAlpha = (1 - easeInOutCubic(staleVisible));
+    staleRow.style.opacity = staleAlpha.toFixed(3);
+    // background red wash strength
+    var washR = staleFlag * (1 - easeInOutCubic(staleVisible));
+    staleRow.style.background = 'rgba(255,235,233,'+(0.0 + 0.85*washR).toFixed(3)+')';
+    staleRow.style.color = mix(C_INK,[130,7,30], washR*0.85);
+    // tiny "stale" hint via doc badge color
+    docBadge.style.color = mix(C_MUTED, C_DANGER_ARR(), easeInOutCubic(seg(ms,2100,2600)) * (1-easeInOutCubic(seg(ms,4800,5300))));
+
+    // ---- BEAM SWEEP (2600..3700) across the gutter ----
+    var beamRaw = seg(ms,2550,3650);
+    var beamP = easeInOutCubic(beamRaw);
+    // beam visible only during sweep + small fade tails
+    var beamOpacity = 0;
+    if(ms>2450 && ms<3950){
+      beamOpacity = Math.min(easeOutCubic(seg(ms,2450,2650)), 1) * (1 - easeInOutCubic(seg(ms,3700,3950)));
+    }
+    beamLine.style.opacity = beamOpacity.toFixed(3);
+    beamHead.style.opacity = beamOpacity.toFixed(3);
+    var headX = lerp(0, TRACK_W, beamP);
+    beamLine.style.width = px(headX);
+    beamHead.style.left = px(headX-4);
+
+    // zar label text states
+    var labelText = 'ZAR';
+    if(ms < 1950) labelText = 'ZAR';
+    else if(ms < 2550) labelText = 'change detected';
+    else if(ms < 3700) labelText = 'matching docs…';
+    else if(ms < 5000) labelText = 'proposing edit';
+    else labelText = 'in sync';
+    zarLabel.textContent = labelText;
+    // label gentle color: muted normally, success at the end
+    zarLabel.style.color = mix(C_MUTED, C_SUCCESS, easeInOutCubic(seg(ms,5000,5600)));
+    zarLabel.style.opacity = easeOutCubic(seg(ms,1100,1700)).toFixed(3);
+
+    // ---- DIFF REVEAL on README (3700..4700) ----
+    // del then add, staggered, slide+fade with width grow feel
+    var dDel = easeOutCubic(seg(ms,3650,4150));
+    diffDel.style.opacity = dDel.toFixed(3);
+    diffDel.style.transform = 'translateX('+px(lerp(-10,0,dDel))+')';
+    diffDel.style.maxHeight = '24px';
+    var dAdd = easeOutCubic(seg(ms,3950,4500));
+    diffAdd.style.opacity = dAdd.toFixed(3);
+    diffAdd.style.transform = 'translateX('+px(lerp(-10,0,dAdd))+')';
+
+    // ---- STATUS: pending(amber) -> success(green) (5000..5700) ----
+    var stP = easeInOutCubic(seg(ms,5000,5700));
+    // CI dot color: amber -> green
+    var ciColor = mix(C_WARN, C_SUCCESS, stP);
+    ciDot.style.background = ciColor;
+    ciPill.style.borderColor = mix([208,215,222],[34,197,94], stP*0.7);
+    // CI text
+    if(ms < 5000){
+      ciText.textContent = 'zar/docs · pending';
+    } else if(stP < 1){
+      ciText.textContent = 'zar/docs · updating';
+    } else {
+      ciText.textContent = 'zar/docs · passing';
+    }
+    ciText.style.color = mix(C_WARN, [10,54,34], stP);
+
+    // status main text + check
+    var mainP = easeInOutCubic(seg(ms,4900,5500));
+    if(ms < 2000){ stMain.textContent = 'Reviewing changes…'; }
+    else if(ms < 3700){ stMain.textContent = 'Found stale doc — README.md'; }
+    else if(ms < 5000){ stMain.textContent = 'Proposing minimal doc edit'; }
+    else { stMain.textContent = 'Docs PR #43 opened — back in sync'; }
+    stMain.style.color = mix(C_INK, [10,54,34], easeInOutCubic(seg(ms,5200,5900))*0.55);
+
+    // status left check: empty -> filling green circle with check
+    var chk = seg(ms,5200,5800);
+    var chkE = easeOutBack(chk);
+    if(ms < 5200){
+      stCheck.style.background = 'transparent';
+      stCheck.style.border = '2px solid '+mix([208,215,222],[191,135,0], easeInOutCubic(seg(ms,300,900)));
+      stCheck.innerHTML = '';
+      stCheck.style.transform='scale(1)';
+    } else {
+      stCheck.style.border = 'none';
+      stCheck.style.background = 'var(--success)';
+      stCheck.style.transform = 'scale('+clamp(chkE,0,1.0001).toFixed(3)+')';
+      stCheck.innerHTML = (ms>5350)? SVG_CHECK_WHITE : '';
+    }
+
+    // sub status on right of status bar (PR meta) — reuse ciPill only; nothing else needed.
+
+    // ---- RESOLVED: badges flip to success pills (6000..6600) ----
+    var badgeFlip = easeInOutCubic(seg(ms,6000,6600));
+    // code badge: muted "changed" -> green "reviewed" with a check glyph
+    var cbResolved = badgeFlip>0.5;
+    codeBadge.innerHTML = cbResolved
+      ? '<span style="display:inline-flex;align-items:center;gap:5px;">'+SVG_CHECK_GREEN_INK+'reviewed</span>'
+      : 'changed';
+    codeBadge.style.color = mix(C_WARN, C_SUCCESS, badgeFlip);
+    codeBadge.style.borderColor = mix([208,215,222],[34,197,94], badgeFlip*0.85);
+    codeBadge.style.background = 'rgba(218,251,225,'+(0.0+0.85*badgeFlip).toFixed(3)+')';
+    // doc badge: "docs" -> green "in sync" with a check
+    var docResolved = badgeFlip>0.5;
+    docBadge.innerHTML = docResolved
+      ? '<span style="display:inline-flex;align-items:center;gap:5px;">'+SVG_CHECK_GREEN_INK+'in sync</span>'
+      : 'docs';
+    docBadge.style.color = mix( (ms<2100?C_MUTED:[130,7,30]) , C_SUCCESS, badgeFlip);
+    docBadge.style.borderColor = mix([208,215,222],[34,197,94], badgeFlip*0.85);
+    docBadge.style.background = 'rgba(218,251,225,'+(0.0+0.85*badgeFlip).toFixed(3)+')';
+
+    // ---- CAPTION (6500..7200) ----
+    var capP = easeOutCubic(seg(ms,6500,7100));
+    caption.style.opacity = capP.toFixed(3);
+    caption.style.transform = 'translateY('+px(lerp(8,0,capP))+')';
+    var capSub = easeOutCubic(seg(ms,6750,7300));
+    captionSub.style.opacity = capSub.toFixed(3);
+    captionSub.style.transform = 'translateY('+px(lerp(6,0,capSub))+')';
+
+    // gently dim the scanning beam label once resolved already handled.
+
+    // From ~7300 to TOTAL_MS everything is at its terminal value -> static hold.
+  }
+
+  // helper: danger color array for stale doc badge
+  function C_DANGER_ARR(){ return [207,34,46]; }
+
+  window.seek = seek;
+
+  // initialize to t=0
+  window.seek(0);
+})();
+</script>
+</body>
+</html>
