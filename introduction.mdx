@@ -1,0 +1,65 @@
+---
+title: "Welcome to ZAR"
+description: "Keep your repository documentation accurate as the code changes."
+---
+
+<Frame caption="A pull request changes a default; ZAR notices the README went stale, opens the one-line docs fix, and the zar/docs check goes green.">
+  <img src="/assets/demo.gif" alt="ZAR detects a stale README after a config change, opens docs PR #43 with the minimal edit, and the zar/docs check turns green" />
+</Frame>
+
+**ZAR is a GitHub App that keeps your documentation accurate as the code changes.** It reads your pull requests the way a reviewer would, then proposes the smallest Markdown edit that makes the docs true again, as a PR you review and merge.
+
+## What is ZAR?
+
+Pull requests change APIs, flags, and flows, and the `README` and `docs/` quietly fall behind. ZAR closes that gap. Powered by Claude and tree-sitter, it watches your repository, notices when a change made the docs inaccurate, and proposes a minimal, grounded fix. It never invents facts, never commits without explicit opt-in, and ships nothing in dry-run mode.
+
+## Get started
+
+<CardGroup cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Install ZAR and get your first documentation suggestion in about five minutes.
+  </Card>
+  <Card title="Installation" icon="github" href="/installation">
+    Install the GitHub App, the permissions it requests, and what happens on first install.
+  </Card>
+</CardGroup>
+
+## Capabilities
+
+<CardGroup cols={2}>
+  <Card title="PR feedback" icon="comments" href="/features/pr-feedback">
+    Reviewable comments, a `zar/docs` commit status, and a dedicated docs PR.
+  </Card>
+  <Card title="CI gate" icon="shield-halved" href="/features/ci-gate">
+    Block a merge when the docs look stale, the same way a failing test blocks one.
+  </Card>
+  <Card title="Auto-commit" icon="code-commit" href="/features/auto-commit">
+    Let ZAR commit fixes directly, behind two explicit opt-in locks.
+  </Card>
+  <Card title="Commands" icon="terminal" href="/features/commands">
+    Drive ZAR from a PR comment: set a style, toggle features, force a run.
+  </Card>
+  <Card title="How it works" icon="diagram-project" href="/concepts/how-it-works">
+    The full pipeline from webhook to docs PR, and every gate in between.
+  </Card>
+  <Card title="MDX & multilingual" icon="language" href="/features/mdx-and-multilingual">
+    Nextra-style `.mdx` and multilingual docs, with frontmatter kept intact.
+  </Card>
+</CardGroup>
+
+## Quick links
+
+<CardGroup cols={4}>
+  <Card title="Reference" icon="book" href="/reference/settings">
+    Settings, commands, env vars, permissions.
+  </Card>
+  <Card title="Troubleshooting" icon="wrench" href="/troubleshooting">
+    Symptom-to-fix for common issues.
+  </Card>
+  <Card title="Plans" icon="credit-card" href="/plans">
+    Tiers, limits, and how access works.
+  </Card>
+  <Card title="Dashboard" icon="gauge" href="https://app.zarlabs.tech">
+    Manage your repos and watch every run.
+  </Card>
+</CardGroup>

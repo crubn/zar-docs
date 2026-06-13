@@ -17,7 +17,7 @@
   <path d="M36 100 l8 8 M44 100 l-8 8" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
   <text x="58" y="102" class="s" font-size="13.5" font-weight="600" fill="#1f2328">docagent/ci-gate</text>
   <text x="58" y="119" class="s" font-size="12" fill="#59636e">ZAR CI Gate: docs needed</text>
-  <text x="690" y="108" text-anchor="end" class="s" font-size="12.5" font-weight="600" fill="#6366f1">Details</text>
+  <text x="690" y="108" text-anchor="end" class="s" font-size="12.5" font-weight="600" fill="#387ccd">Details</text>
   <line x1="12" y1="138" x2="708" y2="138" stroke="#eaeef2" stroke-width="1"/>
 
   <!-- commit status row: zar/docs pending -->

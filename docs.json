@@ -4,9 +4,15 @@
   "name": "ZAR",
   "description": "ZAR keeps your repository documentation accurate as the code changes. PR-native, powered by Claude + tree-sitter.",
   "colors": {
-    "primary": "#6366f1",
-    "light": "#818cf8",
-    "dark": "#4f46e5"
+    "primary": "#387CCD",
+    "light": "#5C9BE0",
+    "dark": "#2C66AE"
+  },
+  "appearance": {
+    "default": "light"
+  },
+  "fonts": {
+    "family": "Inter"
   },
   "favicon": "/assets/favicon.svg",
   "logo": {
@@ -14,71 +20,86 @@
     "dark": "/assets/logo/dark.svg"
   },
   "navigation": {
-    "groups": [
+    "tabs": [
       {
-        "group": "Getting started",
-        "pages": [
-          "introduction",
-          "quickstart",
-          "installation"
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "installation"
+            ]
+          },
+          {
+            "group": "Concepts",
+            "pages": [
+              "concepts/how-it-works",
+              "concepts/safety-and-guarantees"
+            ]
+          },
+          {
+            "group": "Configuration",
+            "pages": [
+              "configuration/overview",
+              "configuration/zar-yml",
+              "configuration/trigger-modes",
+              "configuration/style-guide"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "features/pr-feedback",
+              "features/ci-gate",
+              "features/auto-commit",
+              "features/commands",
+              "features/dashboard",
+              "features/cross-repo-docs",
+              "features/mdx-and-multilingual",
+              "features/notifications"
+            ]
+          },
+          {
+            "group": "Self-hosting",
+            "pages": [
+              "self-hosting/overview",
+              "self-hosting/railway",
+              "self-hosting/docker"
+            ]
+          }
         ]
       },
       {
-        "group": "Concepts",
-        "pages": [
-          "concepts/how-it-works",
-          "concepts/safety-and-guarantees"
+        "tab": "Reference",
+        "groups": [
+          {
+            "group": "Reference",
+            "pages": [
+              "reference/settings",
+              "reference/commands",
+              "reference/environment-variables",
+              "reference/permissions-and-events"
+            ]
+          }
         ]
       },
       {
-        "group": "Configuration",
-        "pages": [
-          "configuration/overview",
-          "configuration/zar-yml",
-          "configuration/trigger-modes",
-          "configuration/style-guide"
-        ]
-      },
-      {
-        "group": "Features",
-        "pages": [
-          "features/pr-feedback",
-          "features/ci-gate",
-          "features/auto-commit",
-          "features/commands",
-          "features/dashboard",
-          "features/cross-repo-docs",
-          "features/mdx-and-multilingual",
-          "features/notifications"
-        ]
-      },
-      {
-        "group": "Reference",
-        "pages": [
-          "reference/settings",
-          "reference/commands",
-          "reference/environment-variables",
-          "reference/permissions-and-events"
-        ]
-      },
-      {
-        "group": "Self-hosting",
-        "pages": [
-          "self-hosting/overview",
-          "self-hosting/railway",
-          "self-hosting/docker"
-        ]
-      },
-      {
-        "group": "More",
-        "pages": [
-          "plans",
-          "troubleshooting",
-          "faq",
-          "security",
-          "privacy",
-          "terms",
-          "changelog"
+        "tab": "Resources",
+        "groups": [
+          {
+            "group": "Resources",
+            "pages": [
+              "plans",
+              "troubleshooting",
+              "faq",
+              "security",
+              "privacy",
+              "terms",
+              "changelog"
+            ]
+          }
         ]
       }
     ]

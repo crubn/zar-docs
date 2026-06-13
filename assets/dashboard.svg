@@ -35,7 +35,7 @@
     <text x="60" y="239" class="m" font-size="13" font-weight="700" fill="#e2e8f0">update.started</text>
     <text x="60" y="256" class="s" font-size="12" fill="#94a3b8">Analyzing with Claude…</text>
 
-    <circle cx="40" cy="292" r="6" fill="#6366f1"/>
+    <circle cx="40" cy="292" r="6" fill="#387ccd"/>
     <text x="60" y="289" class="m" font-size="13" font-weight="700" fill="#e2e8f0">pr.created</text>
     <text x="60" y="306" class="s" font-size="12" fill="#94a3b8">Docs PR #43 opened — 1 file updated</text>
   </g>
